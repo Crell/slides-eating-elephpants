@@ -53,6 +53,68 @@
             <li>Loveable pedant</li>
           </ul>
         </section>
+
+
+        <div style="display:none">
+          Who's excited?
+          Lego/Duplo (want to do this?)
+          Spaghetti (going home to this)
+
+
+          Legacy code: Code that is worth testing that is not easy to test
+          Testing is your foot in the door.
+
+          Story of Drupal 8: WSCCI, Symfony, Denver.  Functions to Objects.  DIC. PHPUnit coverage (compare)
+
+          Lessons:
+
+          * The importance of when
+          ** Link to blog post, summarize?
+          ** Scale, prioritization.
+
+          * Don't write unit tests (do that while refactoring; start with functional tests with Behat/Selenium)
+          ** The code will all be changing, don't make more work for yourself.  Unit test the new stuff.
+          ** Drupal 7, lots of "deep functional" tests. Bad. Makes refactor slow.
+
+          * Service Locator (stepping stone)
+          ** drupal_container() / \Drupal. Use for legacy, refactor incrementally.
+
+          * Outsource all the things
+          ** Symfony, Guzzle, Zend, etc.
+          ** D8 nailed this.
+
+          * Export your own code
+          ** If you can't use it outside of your app... why?
+          ** You probably couldn't test it, either.
+          ** Drupal\Component\
+
+          * Break things
+          ** Code overhaul entails breakage. Deal.
+
+          * Don't break things
+          ** BC shims are your friend
+
+          * Unbreak things
+          ** Remember to remove BC shims!
+          ** As soon as new mechanism is in place, old mechanism is verbotten.
+          ** cache(), db_query(), base_path()
+
+          * Incremental progress
+          ** Moving deck chairs on the titantic is OK if they get you closer to a life boat
+          ** "No new features, so why do it?" -- BAD
+          **
+
+          * The best is the enemy of the good
+          ** Some fugly will remain
+          ** Keep it contained
+
+          * You will never finish (Sissafus)
+
+          * It can be done: You have the technology
+          ** If Drupal can get off the island, so can you
+
+        </div>
+
         <section id="final-slide">
           <h2>Larry Garfield</h2>
           <p>Senior Architect, <a href="http://www.palantir.net/">Palantir.net</a></p>
