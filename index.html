@@ -72,9 +72,24 @@
           ** Link to blog post, summarize?
           ** Scale, prioritization.
 
+          * Don't do it all at once (big elephpant, small elephpants)
+          ** "don’t look a progress horse in the mouth" -- Tim Plunkett
+
           * Don't write unit tests (do that while refactoring; start with functional tests with Behat/Selenium)
           ** The code will all be changing, don't make more work for yourself.  Unit test the new stuff.
           ** Drupal 7, lots of "deep functional" tests. Bad. Makes refactor slow.
+
+          * Establish a beachhead
+          ** DBTNG or Routing?
+          ** Once you have that, things that touch it "ought to be refactored"; repeat
+
+          * Repeat your message
+          ** Every single person in the entire community will need it explained to them personally or they won't get it
+          ** It sucks. It takes a long time. Deal.
+
+          * Undivided attention matters
+          ** "Give me 5 people 10 hours a week, i can do anything. Give me 50 people one hour a week, I can't do shit."
+          ** "if you give 3 people 3 days to work together on something, they’ll make unbelievable amounts of work done" -- Tim Plunkett (Sprints)
 
           * Service Locator (stepping stone)
           ** drupal_container() / \Drupal. Use for legacy, refactor incrementally.
@@ -98,17 +113,30 @@
           ** Remember to remove BC shims!
           ** As soon as new mechanism is in place, old mechanism is verbotten.
           ** cache(), db_query(), base_path()
+          ** Change notices help for communication.
+          ** Code review is a HARD REQUIREMENT to ensure people switch; doubles odds one person knows about it.
 
           * Incremental progress
           ** Moving deck chairs on the titantic is OK if they get you closer to a life boat
           ** "No new features, so why do it?" -- BAD
-          **
+          ** Session refactoring: Mega patch took 2 years. Incrementals, we've got 2 in.  Just moving code into classes first makes it easier to change the class later.  See: https://drupal.org/node/1858196
+          ** "Procedural code inside class keywords" is forward progress.  Take it.  See also, FAPI: https://privatepaste.com/712522fdef
+          ** Move files in one commit, change in another. Avoid confusing Git. Eaiser to review and rebase.
+
+          * Tools
+          ** Fuck patches (we screwed up on that one)
+          ** Review all the things
+
 
           * The best is the enemy of the good
           ** Some fugly will remain
           ** Keep it contained
+          ** Focus on the interface! Crap behind the interface is OK to refactor later.
 
           * You will never finish (Sissafus)
+
+          * "No plan survives first contact with the enemy."
+          * "Plans are useless; planning is everything."
 
           * It can be done: You have the technology
           ** If Drupal can get off the island, so can you
