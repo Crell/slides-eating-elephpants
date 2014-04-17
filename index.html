@@ -28,7 +28,58 @@
 
     <style>
 
+      dl dt {
+        text-align: left;
+      }
+
+      dl dd {
+        margin-left: 2em;
+        text-align: left;
+      }
+
+      .struck {
+        text-decoration: line-through;
+      }
+
     </style>
+
+
+    <script>
+(function() {
+  // Classer utility. When a fragment with data-classer is shown, some other
+  // element withthe ID specified with data-classer will get the class specified
+  // by data-classer-class added to it. When the fragment is hidden the class
+  // will be removed.
+
+  var classerIndex;
+
+  document.addEventListener('DOMContentLoaded', function() {
+    Array.prototype.forEach.call(document.querySelectorAll('[data-classer]'), function(el, i) {
+      // If there's no ID, set one.
+      el.id = el.id || 'classer-' + classerIndex++;
+      runClasser(el.id, el.getAttribute('data-classer'), el.getAttribute('data-classer-class'));
+    });
+  });
+
+  var runClasser = function(id, targetId, targetClass) {
+    if (!targetId || !targetClass) {
+      return;
+    }
+    Reveal.addEventListener('fragmentshown', function(event) {
+      if (event.fragment.id === id) {
+        document.getElementById(targetId).classList.add(targetClass);
+      }
+    });
+    Reveal.addEventListener('fragmenthidden', function(event) {
+      if (event.fragment.id === id) {
+        document.getElementById(targetId).classList.remove(targetClass);
+      }
+    });
+  };
+
+})();
+    </script>
+
 
   </head>
 
@@ -52,6 +103,105 @@
             <li>Advisor, Drupal Association</li>
             <li>Loveable pedant</li>
           </ul>
+        </section>
+
+        <section>
+          <section>
+            <!-- img of lego/duplo -->
+            <aside class="notes">
+              Who's excited to write code like this?
+            </aside>
+          </section>
+          <section data-background="assets/spaghetti.jpg" data-credit="https://www.flickr.com/photos/hatm/5704123809">
+            <aside class="notes">
+              Going home to this?
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>The goal</h2>
+            <p class="bigtext fragment" id="no-legacy-code">No legacy code</p>
+            <p class="bigtext fragment" data-classer="no-legacy-code" data-classer-class="struck">Less legacy code</p>
+          </section>
+          <section>
+            <h2>Legacy code</h2>
+            <ul>
+              <li class="fragment" id="code-didnt-write"><em>noun</em>: Code I didn't write</li>
+              <li class="fragment" id="code-without-tests" data-classer="code-didnt-write" data-classer-class="struck"><em>noun</em>: Code without unit tests</li>
+              <li class="fragment" data-classer="code-without-tests" data-classer-class="struck"><em>noun</em>: Code worth testing that cannot be unit tested</li>
+            </ul>
+          </section>
+          <section>
+            <p class="bigtext">Testable code</p>
+            <div class="fragment">
+              <p>Stand in for</p>
+              <ul>
+                <li>Loosely coupled / Uncoupled</li>
+                <li>Injectable</li>
+                <li>Modern</li>
+                <li>"Good"</li>
+              </ul>
+            </div>
+          </section>
+          <section>
+            <img src="assets/druplicon.svg" style="" alt="Druplicon" />
+            <p class="fragment">If we can do it, so can you</p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <img src="assets/drupal-7-logo.jpg" style="height: 200px;" alt="Drupal 7" data-credit="https://association.drupal.org/files/drupal-7-logo.jpg" />
+            <ul>
+              <li class="fragment">PHP4-era Procedural</li>
+              <li class="fragment">Array-oriented</li>
+              <li class="fragment">Lots of functional tests</li>
+              <li class="fragment">"Unique" (but extensible) architecture</li>
+              <li class="fragment">Runs 2% of the web</li>
+              <li class="fragment">Massive community</li>
+            </ul>
+            <p style="clear: both; margin-top: 2em;" class="fragment">Very powerful, but straining at the seams</p>
+          </section>
+          <section>
+            <img src="assets/drupal-8-logo.png"  style="height: 200px;" alt="Drupal 8" data-credit="https://drupal.org/node/2119739" />
+            <ul>
+              <li class="fragment">Architecturally OOP</li>
+              <li class="fragment">4600 unit tests (and counting)</li>
+              <li class="fragment">Flexible architecture</li>
+              <li class="fragment">Even bigger community</li>
+            </ul>
+            <p style="clear: both; margin-top: 2em;" class="fragment">How'd they do that?</p>
+          </section>
+          <section>
+            <h3>How does one eat an elePHPant?</h3>
+            <p>Big elephpant picture</p>
+          </section>
+          <section>
+            <h3>One bite at a time...</h3>
+            <p>Small elephpant picture</p>
+          </section>
+          <section>
+            <h3>... with friends</h3>
+            <p>Small elephpant picture, more people</p>
+          </section>
+        </section>
+        <section>
+          <section data-background="assets/drupal-delorean.jpg">
+            <div style="font-weight: bold; position: relative; top: 10em; text-shadow: 2px 2px 2px #000;">
+              <p>circa 2011</p>
+            </div>
+          </section>
+          <section>
+            <h2>WSCCI</h2>
+            <p class="fragment">Web Services and Context Core Initiative</p>
+            <blockquote class="fragment">Drupal needs to evolve, and quickly, from a
+              first-class web CMS into a first-class REST server that includes a
+              first-class web CMS.</blockquote>
+          </section>
+          <section>
+
+          </section>
         </section>
 
 
@@ -141,6 +291,8 @@
           * It can be done: You have the technology
           ** If Drupal can get off the island, so can you
 
+          * Check your ego at the door. Always.
+
         </div>
 
         <section id="final-slide">
@@ -189,3 +341,4 @@
 
   </body>
 </html>
+
