@@ -225,17 +225,20 @@
           * Don't do it all at once (big elephpant, small elephpants)
           ** "don’t look a progress horse in the mouth" -- Tim Plunkett
 
+          * Repeat your message
+          ** Every single person in the entire community will need it explained to them personally or they won't get it
+          ** It sucks. It takes a long time. Deal.
+          ** The right order technically and the right order politically may not line up. At all.
+
           * Don't write unit tests (do that while refactoring; start with functional tests with Behat/Selenium)
           ** The code will all be changing, don't make more work for yourself.  Unit test the new stuff.
           ** Drupal 7, lots of "deep functional" tests. Bad. Makes refactor slow.
+          ** 100% green at all times!
 
           * Establish a beachhead
           ** DBTNG or Routing?
           ** Once you have that, things that touch it "ought to be refactored"; repeat
-
-          * Repeat your message
-          ** Every single person in the entire community will need it explained to them personally or they won't get it
-          ** It sucks. It takes a long time. Deal.
+          ** Perhaps the beachhead should be lower-level.  Eg, check_markup() we STILL haven't gotten to.
 
           * Undivided attention matters
           ** "Give me 5 people 10 hours a week, i can do anything. Give me 50 people one hour a week, I can't do shit."
@@ -247,6 +250,7 @@
           * Outsource all the things
           ** Symfony, Guzzle, Zend, etc.
           ** D8 nailed this.
+          ** Don't outsource just for the sake of it.
 
           * Export your own code
           ** If you can't use it outside of your app... why?
@@ -266,16 +270,22 @@
           ** Change notices help for communication.
           ** Code review is a HARD REQUIREMENT to ensure people switch; doubles odds one person knows about it.
 
+          * Beware the bikeshed
+          ** CMI file formats
+
           * Incremental progress
           ** Moving deck chairs on the titantic is OK if they get you closer to a life boat
           ** "No new features, so why do it?" -- BAD
+          ** Initiatives: Too marketing/feature-driven.
           ** Session refactoring: Mega patch took 2 years. Incrementals, we've got 2 in.  Just moving code into classes first makes it easier to change the class later.  See: https://drupal.org/node/1858196
           ** "Procedural code inside class keywords" is forward progress.  Take it.  See also, FAPI: https://privatepaste.com/712522fdef
-          ** Move files in one commit, change in another. Avoid confusing Git. Eaiser to review and rebase.
+          ** Move files in one commit, change in another. Avoid confusing Git. Easier to review and rebase.
 
           * Tools
           ** Fuck patches (we screwed up on that one)
           ** Review all the things
+          ** Automate all the things, esp. performance
+          ** "When you commit enough regressions, it gets harder to measure new ones." --catch
 
 
           * The best is the enemy of the good
