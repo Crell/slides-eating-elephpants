@@ -106,8 +106,7 @@
         </section>
 
         <section>
-          <section>
-            <!-- img of lego/duplo -->
+          <section data-background="assets/duplo-kids.jpg" data-credit="https://www.flickr.com/photos/ianus/9373214">
             <aside class="notes">
               Who's excited to write code like this?
             </aside>
@@ -200,7 +199,122 @@
               first-class web CMS.</blockquote>
           </section>
           <section>
-
+            <p>Refactoring everything wasn't a goal, it was a methodology</p>
+            <aside class="notes">
+              <ul>
+                <li>Wanted to do the new stuff "the right way" for its own sake</li>
+                <li>Let it ripple out as it would</li>
+                <li>We can't be the first to do this...</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <img src="assets/drufony.png" alt="Drupal + Symfony = Drufony" style="max-height: 500px;" />
+            <aside class="notes">
+              <ul>
+                <li>HttpInterface first, then Kernel, then snowball</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <h2>Proudly Invented Elsewhere</h2>
+            <ul class="fragment">
+              <li>Symfony2 <small>(HttpFoundation, HttpKernel, DependencyInjection, EventDispatcher, Routing, Serializer, Validator, Yaml)</small></li>
+              <li>Symfony CMF</li>
+              <li>Zend Feed</li>
+              <li>Doctrine Annotations</li>
+              <li>Guzzle</li>
+              <li>EasyRDF</li>
+              <li>Assetic</li>
+              <li>Twig</li>
+            </ul>
+          </section>
+          <section>
+            <p class="bigtext">Learn from our <span id="our-experience">experience</span> <span class="fragment" data-classer="our-experience" data-classer-class="struck">mistakes</span></p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>#1</h2>
+            <h2 class="fragment">Messaging matters</h2>
+          </section>
+          <section>
+            <p>People need to see value</p>
+            <p class="fragment">Developers need to see value</p>
+            <p class="fragment">Management need to see value</p>
+            <aside class="notes">
+              <ul>
+                <li>Drupal has management; Dries, Angie, companies, etc.</li>
+                <li>You need buy-in</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <p><q>Code quality doesn't matter, only user experience matters</q></p>
+            <p class="fragment" style="margin-top: 2em;">Fire anyone who says this</p>
+            <p class="fragment" style="margin-top: 2em;">Developers are users... <span class="fragment">of code</span></p>
+            <aside class="notes">
+              <ul>
+                <li>UX depends on developer's ability to implement; bad code, no implementation</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <p class="bigtext">Repeat your message</p>
+            <p class="fragment">Everyone wants to hear the message themselves</p>
+            <p class="fragment">Need to repeat it in different ways</p>
+            <p class="fragment">It's a total waste of time... <span class="fragment">Do it anyway</span></p>
+            <aside class="notes">
+              <ul>
+                <li>Blogs, IRC, pub. discussions, conferences</li>
+                <li>Took a year for people to stop asking "so what is WSCCI?"</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <p class="bigtext">Reiterate your message</p>
+            <p class="fragment">Different people respond to different messaging</p>
+            <p class="fragment">Everyone wants to feel special</p>
+            <p class="fragment">It's a total waste of time... <span class="fragment">Do it anyway</span></p>
+            <aside class="notes">
+              <ul>
+                <li>Politicians sound like canned responses because they are canned</li>
+                <li>Took a year for people to stop asking "so what is WSCCI?"</li>
+              </ul>
+            </aside>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>#2</h2>
+            <h2 class="fragment">Don't write unit tests</h2>
+          </section>
+          <section>
+            <h2>Say WAT?</h2>
+            <img src="assets/chris-hartjes-grumpy-cropped.jpg" alt="Grumpy does not approve!" style="height: 100%;" data-credit="https://www.flickr.com/photos/akrabat/8421560178/" />
+          </section>
+          <section>
+            <h2>Write integration tests</h2>
+            <ul>
+              <li class="fragment">If your code were already testable we'd be done</li>
+              <li class="fragment">Unit tests change with the unit</li>
+              <li class="fragment">Unit test the new stuff</li>
+              <li class="fragment">Don't break <em>user</em> functionality</li>
+              <li class="fragment">100% green at all times</li>
+            </ul>
+          </section>
+          <section>
+            <p>Drupal wrote its own testing framework</p>
+            <p class="fragment">(Please please do not do this)</p>
+            <p class="fragment">Having those tests saved our butts</p>
+            <p>
+              <img class="fragment" src="assets/behat-logo.png" alt="Behat" style="background: lightgray;" />
+              <img class="fragment" src="assets/selenium-logo.png" alt="Selenium" />
+            </p>
+          </section>
+          <section>
+            <p>Functional tests are for functionality... only</p>
+            <p class="fragment">Pseudo-unit tests are worse than no tests</p>
           </section>
         </section>
 
