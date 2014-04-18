@@ -174,15 +174,19 @@
           </section>
           <section>
             <h3>How does one eat an elePHPant?</h3>
-            <p>Big elephpant picture</p>
+            <img src="assets/eat-elephpant.jpg" alt="How do you eat an elephant?" />
           </section>
           <section>
             <h3>One bite at a time...</h3>
-            <p>Small elephpant picture</p>
+            <img src="assets/eat-elephpants-mini.jpg" alt="One bite at a time" />
           </section>
           <section>
             <h3>... with friends</h3>
-            <p>Small elephpant picture, more people</p>
+            <img src="assets/eat-elephpants-friends.jpg" alt="With friends" />
+          </section>
+          <section>
+            <h3>... with <em>lots</em> of friends</h3>
+            <img src="assets/drupalcon-portland.jpg" alt="DrupalCon Portland" />
           </section>
         </section>
         <section>
@@ -317,9 +321,100 @@
             <p class="fragment">Pseudo-unit tests are worse than no tests</p>
           </section>
         </section>
+        <section>
+          <section>
+            <h2>#3</h2>
+            <h2 class="fragment">Establish a beachhead</h2>
+          </section>
+          <section>
+            <p style="text-align: left;"><q>The new code will be better</q></p>
+            <p style="text-align: right; margin-top: 1em;" class="fragment"><q>I'll believe it when I see it</q></p>
+          </section>
+          <section>
+            <h2>DBTNG</h2>
+            <ul>
+              <li class="fragment">Drupal 7 DBAL</li>
+              <li class="fragment">Home grown (Sorry, Doctrine)</li>
+              <li class="fragment">98% OOP</li>
+              <li class="fragment"><q>See, it's not so scary</q></li>
+            </ul>
+            <p style="margin-top: 1em;" class="fragment">c. 2008-2011</p>
+          </section>
+          <section>
+            <h2>Routing / Web services</h2>
+            <ul>
+              <li class="fragment">REST-ify routing</li>
+              <li class="fragment">Lots of Symfony code</li>
+            </ul>
+            <p class="fragment" style="margin-top: 1em;"><q>Throw HttpKernel in the middle<br />and let the chips fall where they may</q></p>
+            <aside class="notes">
+              <ul>
+                <li>Old router only knew paths</li>
+                <li>Symfony/CMF router knows full request</li>
+                <li>The world didn't need another Request object</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <h2>Goal: It's not so scary</h2>
+            <h2 class="fragment">Goal: Demonstrate benefit</h2>
+            <p class="fragment">(Shame the old code, not the old coders)</p>
+            <aside class="notes">
+              Make the old code feel clunkier, so people want to refactor it.
+            </aside>
+          </section>
+          <section>
+            <h2>Bottom up</h2>
+            <div class="fragment" style="float: left; width: 48%">
+              <h3>Pros</h3>
+              <ul>
+                <li class="fragment">Low-hanging fruit</li>
+                <li class="fragment">Easier parallelism</li>
+                <li class="fragment">Unravel knots bit by bit</li>
+              </ul>
+            </div>
+            <div class="fragment" style="float: right; width: 48%">
+              <h3>Cons</h3>
+              <ul>
+                <li class="fragment">Low-incentive</li>
+                <li class="fragment">Less impactful</li>
+                <li class="fragment">Staving off the big break</li>
+              </ul>
+            </div>
+          </section>
+          <section>
+            <h2>Top down</h2>
+            <div class="fragment" style="float: left; width: 48%">
+              <h3>Pros</h3>
+              <ul>
+                <li class="fragment">Highest-visibility first</li>
+                <li class="fragment">Identify the major knots</li>
+                <li class="fragment">Better contrast w/ old code</li>
+              </ul>
+            </div>
+            <div class="fragment" style="float: right; width: 48%">
+              <h3>Cons</h3>
+              <ul>
+                <li class="fragment">Higher risk</li>
+                <li class="fragment">So many knots...</li>
+                <li class="fragment">Don't forget the low-fruit!</li>
+              </ul>
+            </div>
+            <aside class="notes">
+              <ul>
+                <li>High risk = Not enough experience yet.</li>
+                <li>low-fruit: check_markup() is still a function. WTF?</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <blockquote>The right approach technically<br />and the right approach politically<br />may be completely different.</blockquote>
+          </section>
+        </section>
 
 
         <div style="display:none">
+          <div>
           Who's excited?
           Lego/Duplo (want to do this?)
           Spaghetti (going home to this)
@@ -353,6 +448,8 @@
           ** DBTNG or Routing?
           ** Once you have that, things that touch it "ought to be refactored"; repeat
           ** Perhaps the beachhead should be lower-level.  Eg, check_markup() we STILL haven't gotten to.
+
+          </div>
 
           * Undivided attention matters
           ** "Give me 5 people 10 hours a week, i can do anything. Give me 50 people one hour a week, I can't do shit."
