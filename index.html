@@ -514,13 +514,13 @@
           </section>
         </section>
         <section>
-         <section>
+          <section>
             <h2>#5</h2>
             <h2 class="fragment">User a Service Locator</h2>
           </section>
           <section>
-            <h2>Say WAT?</h2>
-            <img src="assets/" alt="Paul Jones does not approve!" style="height: 100%;" data-credit="" />
+            <h2>What did you say, boy?</h2>
+            <img src="assets/paul-jones-sniper.jpg" alt="Paul Jones does not approve!" style="height: 100%;" />
           </section>
           <section>
             <p><q>But Service Locators are eeeeevil!</q></p>
@@ -584,6 +584,173 @@ function menu_menu_update(Menu $menu) {
 }
             </code></pre>
           </section>
+          <section>
+            <pre><code class="php" data-trim>
+class BookManager {
+
+  public function bookTreeAllData($bid, $link = NULL, $max_depth = NULL) {
+    $language_interface = \Drupal::languageManager()->getCurrentLanguage();
+    // ...
+    $tree[$cid] = $this->bookTreeBuild($bid, $tree_parameters);
+
+    return $tree[$cid];
+  }
+}
+            </code></pre>
+          </section>
+          <section>
+            <pre><code class="php" data-trim>
+class BookManager {
+
+  public function bookTreeAllData($bid, $link = NULL, $max_depth = NULL) {
+    $language_interface = $this->languageManager()->getCurrentLanguage();
+    // ...
+    $tree[$cid] = $this->bookTreeBuild($bid, $tree_parameters);
+
+    return $tree[$cid];
+  }
+
+  public function languageManager() {
+    return \Drupal::languageManager();
+  }
+}
+            </code></pre>
+          </section>
+          <section>
+            <pre><code class="php" data-trim>
+class BookManager {
+
+  public function bookTreeAllData($bid, $link = NULL, $max_depth = NULL) {
+    $language_interface = $this->languageManager()->getCurrentLanguage();
+    // ...
+    $tree[$cid] = $this->bookTreeBuild($bid, $tree_parameters);
+
+    return $tree[$cid];
+  }
+
+  public function languageManager() {
+    return $this->languageManager;
+  }
+}
+            </code></pre>
+          </section>
+          <section>
+            <p>Service locators are a stepping stone<br />toward Dependency Injection</p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>#6</h2>
+            <h2 class="fragment">Um, something</h2>
+          </section>
+          <section>
+            <p>Big refactoring breaks APIs</p>
+            <p class="fragment">Deal</p>
+          </section>
+          <section>
+            <h3>Dealing</h3>
+            <ul>
+              <li class="fragment">BC shims are your friend</li>
+              <li class="fragment">Don't use BC shims</li>
+              <li class="fragment">Convert BC shims</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Drupal 7</h3>
+            <pre><code class="php" data-trim>
+function _cache_get_object($bin) {
+  static $cache_objects;
+  if (!isset($cache_objects[$bin])) {
+    $class = variable_get('cache_class_' . $bin);
+    if (!isset($class)) {
+      $class = variable_get('cache_default_class', 'DrupalDatabaseCache');
+    }
+    $cache_objects[$bin] = new $class($bin);
+  }
+  return $cache_objects[$bin];
+}
+            </code></pre>
+            <pre><code class="php" data-trim>
+function cache_get($cid, $bin = 'cache') {
+  return _cache_get_object($bin)->get($cid);
+}
+
+function cache_get_multiple(array &$cids, $bin = 'cache') {
+  return _cache_get_object($bin)->getMultiple($cids);
+}
+
+function cache_set($cid, $data, $bin = 'cache', $expire = CACHE_PERMANENT) {
+  return _cache_get_object($bin)->set($cid, $data, $expire);
+}
+            </code></pre>
+          </section>
+          <section>
+            <h3>Drupal 8 (early)</h3>
+            <pre><code class="php" data-trim>
+/**
+ * @deprecated
+ */
+function cache_get($cid, $bin) {
+  return \Drupal::cache($bin);
+}
+
+function cache($bin = 'cache') {
+  return \Drupal::cache($bin);
+}
+            </code></pre>
+            <pre class="fragment"><code class="php" data-trim>
+function something() {
+  $item = cache_get('menu', 'akey');
+}
+            </code></pre>
+            <pre class="fragment"><code class="php" data-trim>
+function something() {
+  $item = cache()->get('akey');
+}
+            </code></pre>
+            <pre class="fragment"><code class="php" data-trim>
+function something() {
+  $item = \Drupal::cache('menu')->get('akey');
+}
+            </code></pre>
+          </section>
+          <section>
+            <h3>Drupal 8 (current)</h3>
+            <pre><code class="php" data-trim>
+class Cache {
+  public static function deleteTags(array $tags) {
+    foreach (static::getBins() as $cache_backend) {
+      $cache_backend->deleteTags($tags);
+    }
+  }
+
+  public static function getBins() {
+    $bins = array();
+    $container = \Drupal::getContainer();
+    foreach ($container->getParameter('cache_bins') as $service_id => $bin) {
+      $bins[$bin] = $container->get($service_id);
+    }
+    return $bins;
+  }
+}
+            </code></pre>
+            <p class="fragment">Is this code <em>worth testing</em>?</p>
+          </section>
+          <section>
+            <p><q>Nothing is more permanent than a temporary solution</q></p>
+            <p class="fragment" style="margin-top: 1em;">This takes work to address</p>
+          </section>
+          <section>
+            <h3>Temporary solutions</h3>
+            <ul>
+              <li class="fragment"><code>@deprecated</code> <span class="fragment" style="font-style: italic;">(Never add uses)</span></li>
+              <li class="fragment">Change notices (aka, Documentation!)</li>
+              <li class="fragment">Peer review</li>
+              <li class="fragment"><code>E_USER_DEPRECATED</code>?</li>
+              <li class="fragment">Sunset plan: <span class="fragment">release blocking?</span></li>
+            </ul>
+            <p class="fragment" style="margin-top: 1em;">Changesets that just removes legacy use<br /><em>must</em> be acceptable</p>
+          </section>
         </section>
 
 
@@ -631,16 +798,6 @@ function menu_menu_update(Menu $menu) {
           * Service Locator (stepping stone)
           ** drupal_container() / \Drupal. Use for legacy, refactor incrementally.
 
-          </div>
-
-          * Undivided attention matters
-          ** "Give me 5 people 10 hours a week, i can do anything. Give me 50 people one hour a week, I can't do shit."
-          ** "if you give 3 people 3 days to work together on something, they’ll make unbelievable amounts of work done" -- Tim Plunkett (Sprints)
-
-          * Export your own code
-          ** If you can't use it outside of your app... why?
-          ** You probably couldn't test it, either.
-          ** Drupal\Component\
 
           * Break things
           ** Code overhaul entails breakage. Deal.
@@ -655,6 +812,7 @@ function menu_menu_update(Menu $menu) {
           ** Change notices help for communication.
           ** Code review is a HARD REQUIREMENT to ensure people switch; doubles odds one person knows about it.
 
+          </div>
           * Beware the bikeshed
           ** CMI file formats
 
@@ -665,6 +823,16 @@ function menu_menu_update(Menu $menu) {
           ** Session refactoring: Mega patch took 2 years. Incrementals, we've got 2 in.  Just moving code into classes first makes it easier to change the class later.  See: https://drupal.org/node/1858196
           ** "Procedural code inside class keywords" is forward progress.  Take it.  See also, FAPI: https://privatepaste.com/712522fdef
           ** Move files in one commit, change in another. Avoid confusing Git. Easier to review and rebase.
+
+
+          * Undivided attention matters
+          ** "Give me 5 people 10 hours a week, i can do anything. Give me 50 people one hour a week, I can't do shit."
+          ** "if you give 3 people 3 days to work together on something, they’ll get unbelievable amounts of work done" -- Tim Plunkett (Sprints)
+
+          * Export your own code
+          ** If you can't use it outside of your app... why?
+          ** You probably couldn't test it, either.
+          ** Drupal\Component\
 
           * Tools
           ** Fuck patches (we screwed up on that one)
