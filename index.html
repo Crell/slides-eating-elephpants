@@ -418,7 +418,7 @@
           </section>
           <section>
             <p>Modern PHP is all about sharing</p>
-            <p class="fragment" style="margin-top: 1em;">It's way easier than it used to be.</p>
+            <p class="fragment" style="margin-top: 1em;">It's way easier than it used to be</p>
             <aside class="notes">
               <ul>
                 <li>Composer, Symfony, Zend, Aura: Components FTW!</li>
@@ -436,7 +436,7 @@
             <h3>That's the point</h3>
           </section>
           <section>
-            <h3>For new code</h3>
+            <h3>For new functionality</h3>
             <div class="fragment">
               <blockquote>Writing code should not be the 1st response. Finding if shared code exists should be the 1st response.</blockquote>
               <p>&mdash; <a href="https://twitter.com/e3BethT/status/457207489851686913">Beth Tucker-Long</a></p>
@@ -450,15 +450,16 @@
             </aside>
           </section>
           <section>
-            <h3>For existing code</h3>
-            <p>Refactor your app, don't replace it</p>
+            <h3>For existing functionality</h3>
+            <p class="fragment" style="margin-top: 1em;">Refactor your app, don't replace it</p>
             <p class="fragment">Replace your component, don't refactor it</p>
+            <p class="fragment roll-in">(Especially security!)</p>
           </section>
           <section>
             <h3><code id="dhr">drupal_http_request()</code></h3>
             <ul>
               <li class="fragment">HTTP/1.0 client</li>
-              <li class="fragment">One function. No, really</li>
+              <li class="fragment">One 304 line function <span class="fragment">(No, really)</span></li>
               <li class="fragment">Cyclomatic complexity: 41</li>
               <li class="fragment">N-Path complexity: 25,303,344,960</li>
               <li class="fragment">Lacking a number of features (proxy support)</li>
@@ -467,15 +468,49 @@
           </section>
           <section>
             <h3>Guzzle</h3>
-            <p class="fragment">We did our research!</p>
+            <p class="fragment">We did our <a href="https://groups.drupal.org/node/233173">research</a>!</p>
             <ul>
               <li class="fragment">HTTP/1.1</li>
               <li class="fragment">Well-tested</li>
-              <li class="fragment">Widely used</li>
               <li class="fragment">Loosely coupled</li>
+              <li class="fragment">Widely used</li>
               <li class="fragment">Way better than ours</li>
             </ul>
             <p class="fragment" style="margin-top: 1em;"><code>s/drupal_http_request()/Guzzle/</code></p>
+            <aside class="notes">
+              <ul>
+                <li>Guzzle 3 refactored FOR US</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <h3>RSS</h3>
+            <ul>
+              <li class="fragment">Drupal 7 had 2 <span class="fragment">or 3</span> <span class="fragment">plus contrib?</span></li>
+              <li class="fragment">circa 2002</li>
+            </ul>
+            <div style="margin-top: 1em;">
+              <p class="fragment" style="text-align: left;"><q>Hey Symfony, what RSS parser do you use?</q></p>
+              <p class="fragment" style="text-align: right;"><q>Zend Feed</q></p>
+              <p class="fragment" style="text-align: left;"><q>Ooo, shiny!</q></p>
+            </div>
+            <p class="fragment roll-in" style="margin-top: 1em;">(Still WIP)</p>
+            <aside class="notes">
+              <ul>
+                <li>Old code: Learning XML in PHP 4</li>
+                <li>Zend refactored FOR US</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <h2>However!</h2>
+            <p class="bigtext fragment">If it's not broke, don't fix it</p>
+            <aside class="notes">
+              <ul>
+                <li>Outsourcing has costs; lack of control</li>
+                <li>It often has value... but not always</li>
+              </ul>
+            </aside>
           </section>
         </section>
 
@@ -516,6 +551,11 @@
           ** Once you have that, things that touch it "ought to be refactored"; repeat
           ** Perhaps the beachhead should be lower-level.  Eg, check_markup() we STILL haven't gotten to.
 
+          * Outsource all the things
+          ** Symfony, Guzzle, Zend, etc.
+          ** D8 nailed this.
+          ** Don't outsource just for the sake of it.
+
           </div>
 
           * Undivided attention matters
@@ -524,11 +564,6 @@
 
           * Service Locator (stepping stone)
           ** drupal_container() / \Drupal. Use for legacy, refactor incrementally.
-
-          * Outsource all the things
-          ** Symfony, Guzzle, Zend, etc.
-          ** D8 nailed this.
-          ** Don't outsource just for the sake of it.
 
           * Export your own code
           ** If you can't use it outside of your app... why?
