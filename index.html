@@ -641,7 +641,7 @@ class BookManager {
         <section>
           <section>
             <h2>#6</h2>
-            <h2 class="fragment">Um, something</h2>
+            <h2 class="fragment">Break things in steps</h2>
           </section>
           <section>
             <p>Big refactoring breaks APIs</p>
@@ -752,6 +752,105 @@ class Cache {
             <p class="fragment" style="margin-top: 1em;">Changesets that just removes legacy use<br /><em>must</em> be acceptable</p>
           </section>
         </section>
+        <section>
+          <section>
+            <h2>#7</h2>
+            <h2 class="fragment">Incremental progress is<br />still progress</h2>
+          </section>
+          <section>
+            <p>Changesets that just removes legacy use<br /><em>must</em> be acceptable</p>
+            <p class="fragment" style="margin-top: 1em;">Improving code without adding features <em>must</em> be acceptable</p>
+            <aside class="notes">
+              <ul>
+                <li>Rearranging deck chairs on the Titanic is OK if they get you closer to a life boat</li>
+                <li>Early: "No new features, so why do it?" -- BAD</li>
+                <li>Code improvement has to be seen as intrinsically valuable</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <h2>Messaging matters</h2>
+          </section>
+          <section>
+            <p>Don't bite off more than you can chew</p>
+          </section>
+          <section>
+            <h3>Session handling</h3>
+            <ul>
+              <li class="fragment">2 years on 1 patch... fail :-(</li>
+              <li class="fragment">Rearrange deck chairs: 2 in already.</li>
+              <li class="fragment">We'll get there...</li>
+            </ul>
+          </section>
+          <section>
+            <p><q>Procedural code inside class keyword is still progress</q></p>
+          </section>
+          <section>
+            <h3>Form Builder</h3>
+            <pre><code class="php" data-trim>
+class FormBuilder {
+  public function __construct(ModuleHandlerInterface $module_handler, KeyValueExpirableFactoryInterface $key_value_expirable_factory, EventDispatcherInterface $event_dispatcher, UrlGeneratorInterface $url_generator, TranslationInterface $translation_manager, CsrfTokenGenerator $csrf_token = NULL, HttpKernel $http_kernel = NULL) {
+    $this->moduleHandler = $module_handler;
+    $this->keyValueExpirableFactory = $key_value_expirable_factory;
+    $this->eventDispatcher = $event_dispatcher;
+    $this->urlGenerator = $url_generator;
+    $this->translationManager = $translation_manager;
+    $this->csrfToken = $csrf_token;
+    $this->httpKernel = $http_kernel;
+  }
+}
+            </code></pre>
+          </section>
+          <section>
+            <pre><code class="php" data-trim>
+class FormBuilder {
+  public function getForm($form_arg) {
+    // ...
+    $form_id = $this->getFormId($form_arg, $form_state);
+    return $this->buildForm($form_id, $form_state);
+  }
+
+  public function getFormId($form_arg, &$form_state) {
+    // 20 lines of fugly here.
+  }
+
+  public function buildForm($form_id, array &$form_state) {
+    // 100 lines of code/comments here
+    return $form;
+  }
+}
+            </code></pre>
+          </section>
+          <section>
+            <h3>form.inc</h3>
+            <pre><code class="php" data-trim>
+function drupal_get_form($form_arg) {
+  return call_user_func_array(
+    [\Drupal::formBuilder(), 'getForm'],
+    func_get_args()
+  );
+}
+function drupal_build_form($form_id, &$form_state) {
+  return \Drupal::formBuilder()->buildForm($form_id, $form_state);
+}
+function form_state_defaults() {
+  return \Drupal::formBuilder()->getFormStateDefaults();
+}
+function drupal_rebuild_form($form_id, &$form_state, $old = NULL) {
+  return \Drupal::formBuilder()->rebuildForm($form_id, $form_state, $old);
+}
+            </code></pre>
+          </section>
+          <section>
+            <h3>The More You Know...</h3>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>#8</h2>
+            <h2 class="fragment"></h2>
+          </section>
+        </section>
 
 
         <div style="display:none">
@@ -812,10 +911,6 @@ class Cache {
           ** Change notices help for communication.
           ** Code review is a HARD REQUIREMENT to ensure people switch; doubles odds one person knows about it.
 
-          </div>
-          * Beware the bikeshed
-          ** CMI file formats
-
           * Incremental progress
           ** Moving deck chairs on the titantic is OK if they get you closer to a life boat
           ** "No new features, so why do it?" -- BAD
@@ -824,6 +919,9 @@ class Cache {
           ** "Procedural code inside class keywords" is forward progress.  Take it.  See also, FAPI: https://privatepaste.com/712522fdef
           ** Move files in one commit, change in another. Avoid confusing Git. Easier to review and rebase.
 
+          </div>
+          * Beware the bikeshed
+          ** CMI file formats
 
           * Undivided attention matters
           ** "Give me 5 people 10 hours a week, i can do anything. Give me 50 people one hour a week, I can't do shit."
