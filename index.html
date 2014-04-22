@@ -562,23 +562,20 @@ class Drupal {
   public static function service($id) {
     return static::$container->get($id);
   }
+
+  public static function request() {
+    return static::$container->get('request');
+  }
+
+  public static function entityManager() {
+    return static::$container->get('entity.manager');
+  }
+
+  public static function database() {
+    return static::$container->get('database');
+  }
 }
             </code></pre>
-            <pre class="fragment"><code class="php" data-trim>
-
-public static function request() {
-  return static::$container->get('request');
-}
-
-public static function entityManager() {
-  return static::$container->get('entity.manager');
-}
-
-public static function database() {
-  return static::$container->get('database');
-}
-            </code></pre>
-
           </section>
           <section>
             <pre><code class="php" data-trim>
@@ -676,8 +673,7 @@ function _cache_get_object($bin) {
   }
   return $cache_objects[$bin];
 }
-            </code></pre>
-            <pre><code class="php" data-trim>
+
 function cache_get($cid, $bin = 'cache') {
   return _cache_get_object($bin)->get($cid);
 }
@@ -756,7 +752,7 @@ class Cache {
               <li class="fragment"><code>E_USER_DEPRECATED</code>?</li>
               <li class="fragment">Sunset plan: <span class="fragment">release blocking?</span></li>
             </ul>
-            <p class="fragment" style="margin-top: 1em;">Changesets that just removes legacy use<br /><em>must</em> be acceptable</p>
+            <p class="fragment" style="margin-top: 1em;">Changesets that just remove legacy use<br /><em>must</em> be acceptable</p>
           </section>
         </section>
         <section>
@@ -765,7 +761,7 @@ class Cache {
             <h2 class="fragment">Incremental progress is<br />still progress</h2>
           </section>
           <section>
-            <p>Changesets that just removes legacy use<br /><em>must</em> be acceptable</p>
+            <p>Changesets that just remove legacy use<br /><em>must</em> be acceptable</p>
             <p class="fragment" style="margin-top: 1em;">Improving code without adding features <em>must</em> be acceptable</p>
             <aside class="notes">
               <ul>
@@ -805,12 +801,7 @@ class FormBuilder {
     $this->csrfToken = $csrf_token;
     $this->httpKernel = $http_kernel;
   }
-}
-            </code></pre>
-          </section>
-          <section>
-            <pre><code class="php" data-trim>
-class FormBuilder {
+
   public function getForm($form_arg) {
     // ...
     $form_id = $this->getFormId($form_arg, $form_state);
@@ -837,12 +828,15 @@ function drupal_get_form($form_arg) {
     func_get_args()
   );
 }
+
 function drupal_build_form($form_id, &$form_state) {
   return \Drupal::formBuilder()->buildForm($form_id, $form_state);
 }
+
 function form_state_defaults() {
   return \Drupal::formBuilder()->getFormStateDefaults();
 }
+
 function drupal_rebuild_form($form_id, &$form_state, $old = NULL) {
   return \Drupal::formBuilder()->rebuildForm($form_id, $form_state, $old);
 }
@@ -894,7 +888,7 @@ function drupal_rebuild_form($form_id, &$form_state, $old = NULL) {
         </section>
         <section>
           <section>
-            <h2>#8</h2>
+            <h2>#9</h2>
             <h2 class="fragment">Beware the bikeshed</h2>
           </section>
           <section>
