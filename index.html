@@ -41,6 +41,13 @@
         text-decoration: line-through;
       }
 
+      li.bigdeal {
+        font-size: 150%;
+        color: Red;
+        font-style: italic;
+         text-shadow: 3px 3px 10px #990000;
+      }
+
     </style>
 
 
@@ -848,7 +855,85 @@ function drupal_rebuild_form($form_id, &$form_state, $old = NULL) {
         <section>
           <section>
             <h2>#8</h2>
-            <h2 class="fragment"></h2>
+            <h2 class="fragment">Undivided attention matters</h2>
+          </section>
+          <section>
+            <p>Work does not get done in spare time</p>
+            <aside class="notes">
+              <ul>
+                <li>"In-house projects" happen when?</li>
+                <li>Nights and weekends SUCK.</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <p>Context switching sucks</p>
+            <aside class="notes">
+              <ul>
+                <li>Does this even need to be argued anymore?</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <blockquote>Give me 5 people 10 hours a week and I can do anything. Give me 50 people one hour a week and I can't do squat.</blockquote>
+            <p>&mdash; Larry Garfield, 2011 <span class="fragment">and 2012</span> <span class="fragment">and 2013</span></p>
+          </section>
+          <section>
+            <h3>Sprints</h3>
+            <ul>
+              <li class="fragment"><em>In person</em> collaboration</li>
+              <li class="fragment"><em>Small</em> group</li>
+              <li class="fragment"><em>Dedicated</em> time</li>
+              <li class="fragment"><em>Right</em> people</li>
+            </ul>
+            <div class="fragment">
+              <blockquote>"if you give 3 people 3 days to work together on something, they’ll get unbelievable amounts of work done."</blockquote>
+              <p>&mdash; Tim Plunkett</p>
+            </div>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>#8</h2>
+            <h2 class="fragment">Beware the bikeshed</h2>
+          </section>
+          <section>
+            <img src="assets/nuclear-reactor-control.jpg" alt="Nuclear reactors are complicated" data-credit="https://www.flickr.com/photos/martinpro/2138123729" />
+          </section>
+          <section>
+            <img src="assets/bikeshed.jpg" alt="Bikesheds are dangerous places" data-credit="https://www.flickr.com/photos/simonsmithster/3418651078" />
+          </section>
+          <section>
+            <h3>Configuration system</h3>
+            <ul>
+              <li class="fragment">Feature change #1</li>
+              <li class="fragment">Staging &amp; Deployment: Solved!</li>
+              <li class="fragment">June 2011: 3 day 5 person sprint, Denver</li>
+              <li class="fragment">Detailed recommendation</li>
+              <li class="fragment">Files on disk, load system, API, staging, etc.</li>
+              <li class="fragment" id="cmi-format-list">Format: JSON, YAML, XML?</li>
+            </ul>
+            <span class="fragment" data-classer="cmi-format-list" data-classer-class="bigdeal"></span>
+          </section>
+          <section>
+            <img src="assets/picard-riker-facepalm.jpg" alt="Picard-Riker Face Palm" />
+            <aside class="notes">
+              <ul>
+                <li>Eventually JSON, because easy</li>
+                <li>Moved to YAML, because docs</li>
+                <li>No one loves XML anymore. :-(</li>
+                <li></li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <h3>Bikeshed stoppers</h3>
+            <p class="fragment">Strong leadership, solid communcation, luck</p>
+            <aside class="notes">
+              <ul>
+                <li>Strong leaders know when to say Shut Up</li>
+              </ul>
+            </aside>
           </section>
         </section>
 
@@ -919,13 +1004,15 @@ function drupal_rebuild_form($form_id, &$form_state, $old = NULL) {
           ** "Procedural code inside class keywords" is forward progress.  Take it.  See also, FAPI: https://privatepaste.com/712522fdef
           ** Move files in one commit, change in another. Avoid confusing Git. Easier to review and rebase.
 
-          </div>
+
+          * Undivided attention matters
+          ** "Give me 5 people 10 hours a week, i can do anything. Give me 50 people one hour a week, I can't do squat."
+          ** "if you give 3 people 3 days to work together on something, they’ll get unbelievable amounts of work done" -- Tim Plunkett (Sprints)
+
           * Beware the bikeshed
           ** CMI file formats
 
-          * Undivided attention matters
-          ** "Give me 5 people 10 hours a week, i can do anything. Give me 50 people one hour a week, I can't do shit."
-          ** "if you give 3 people 3 days to work together on something, they’ll get unbelievable amounts of work done" -- Tim Plunkett (Sprints)
+          </div>
 
           * Export your own code
           ** If you can't use it outside of your app... why?
@@ -945,6 +1032,7 @@ function drupal_rebuild_form($form_id, &$form_state, $old = NULL) {
           ** Focus on the interface! Crap behind the interface is OK to refactor later.
 
           * You will never finish (Sissafus)
+          ** http://cheezburger.com/887098624
 
           * "No plan survives first contact with the enemy."
           * "Plans are useless; planning is everything."
