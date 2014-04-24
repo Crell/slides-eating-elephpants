@@ -85,6 +85,19 @@
   };
 
 })();
+
+(function() {
+  document.addEventListener('DOMContentLoaded', function() {
+    Array.prototype.forEach.call(document.querySelectorAll('section.social > section:first-child'), function(el, i) {
+      el.setAttribute('data-background', '#0000cc');
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('section.technical > section:first-child'), function(el, i) {
+      el.setAttribute('data-background', '#00cc00');
+    });
+  });
+
+})();
+
     </script>
 
 
@@ -152,7 +165,7 @@
             </div>
           </section>
           <section>
-            <img src="assets/druplicon.svg" style="" alt="Druplicon" />
+            <img src="assets/druplicon.svg" style="width: 50%" alt="Druplicon" />
             <p class="fragment">If we can do it, so can you</p>
           </section>
         </section>
@@ -238,13 +251,14 @@
               <li>EasyRDF</li>
               <li>Assetic</li>
               <li>Twig</li>
+              <li>PHPUnit</li>
             </ul>
           </section>
           <section>
             <p class="bigtext">Learn from our <span id="our-experience">experience</span> <span class="fragment" data-classer="our-experience" data-classer-class="struck">mistakes</span></p>
           </section>
         </section>
-        <section>
+        <section class="social">
           <section>
             <h2>#1</h2>
             <h2 class="fragment">Messaging matters</h2>
@@ -295,7 +309,7 @@
             </aside>
           </section>
         </section>
-        <section>
+        <section class="technical">
           <section>
             <h2>#2</h2>
             <h2 class="fragment">Don't write unit tests</h2>
@@ -328,7 +342,7 @@
             <p class="fragment">Pseudo-unit tests are worse than no tests</p>
           </section>
         </section>
-        <section>
+        <section class="social">
           <section>
             <h2>#3</h2>
             <h2 class="fragment">Establish a beachhead</h2>
@@ -418,7 +432,7 @@
             <blockquote>The right approach technically<br />and the right approach politically<br />may be completely different.</blockquote>
           </section>
         </section>
-        <section>
+        <section class="technical">
           <section>
             <h2>#4</h2>
             <h3>Outsourcing is good for you</h3>
@@ -528,13 +542,13 @@
             </ul>
           </section>
         </section>
-        <section>
+        <section class="technical">
           <section>
             <h2>#5</h2>
             <h2 class="fragment">User a Service Locator</h2>
           </section>
           <section>
-            <h2>What did you say, boy?</h2>
+            <h2>WAT?</h2>
             <img src="assets/paul-jones-sniper.jpg" alt="Paul Jones does not approve!" style="height: 100%;" />
           </section>
           <section>
@@ -650,7 +664,7 @@ class BookManager {
             <p>Service locators are a stepping stone<br />toward Dependency Injection</p>
           </section>
         </section>
-        <section>
+        <section class="technical">
           <section>
             <h2>#6</h2>
             <h2 class="fragment">Break things in steps</h2>
@@ -763,7 +777,7 @@ class Cache {
             <p class="fragment" style="margin-top: 1em;">Changesets that just remove legacy use<br /><em>must</em> be acceptable</p>
           </section>
         </section>
-        <section>
+        <section class="technical">
           <section>
             <h2>#7</h2>
             <h2 class="fragment">Incremental progress is<br />still progress</h2>
@@ -854,7 +868,7 @@ function drupal_rebuild_form($form_id, &$form_state, $old = NULL) {
             <h3>The More You Know...</h3>
           </section>
         </section>
-        <section>
+        <section class="social">
           <section>
             <h2>#8</h2>
             <h2 class="fragment">Undivided attention matters</h2>
@@ -894,7 +908,7 @@ function drupal_rebuild_form($form_id, &$form_state, $old = NULL) {
             </div>
           </section>
         </section>
-        <section>
+        <section class="social">
           <section>
             <h2>#9</h2>
             <h2 class="fragment">Beware the bikeshed</h2>
@@ -938,7 +952,7 @@ function drupal_rebuild_form($form_id, &$form_state, $old = NULL) {
             </aside>
           </section>
         </section>
-        <section>
+        <section class="technical">
           <section>
             <h2>#10</h2>
             <h2 class="fragment">Tools matter</h2>
@@ -987,7 +1001,7 @@ function drupal_rebuild_form($form_id, &$form_state, $old = NULL) {
             </aside>
           </section>
         </section>
-        <section>
+        <section class="technical">
           <section>
             <h2>#11</h2>
             <h2 class="fragment">Perfectionism has its place</h2>
@@ -1033,7 +1047,7 @@ class FormBuilder {
             <img class="fragment" src="assets/sisyphus-cat.jpg" alt="Sysyphus cat tries again" data-credit="http://cheezburger.com/887098624" />
           </section>
         </section>
-        <section>
+        <section class="social">
           <section>
             <h2>#12</h2>
             <h2 class="fragment">Check your ego at the door</h2>
@@ -1052,6 +1066,37 @@ class FormBuilder {
 
 
         <div style="display:none">
+
+The story of Drupal:
+* D7
+* D8
+* elephpants
+* WSCCI
+* Learn from our mistakes
+
+Plan ahead (mgmt):
+Mesaging matters (social)
+Beachhead (social)
+
+Structure:
+* Undivided attention (social)
+* Bikeshed (social)
+
+Preparing:
+* Don't write unit tests (tech)
+* Outsourcing is good for you (technical)
+* Tools (technical)
+
+Incremental progress (tech)
+* Use an SL (technical)
+* Break into steps (tech)
+* Perfectionism (technical)
+
+* Sisyfus cat
+* It's hard, but if we can do it so can you
+* One bite at a time, with friends
+
+
           <div>
             Who's excited?
             Lego/Duplo (want to do this?)
