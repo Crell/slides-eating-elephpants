@@ -137,10 +137,9 @@
             </aside>
           </section>
         </section>
-
         <section>
           <section>
-            <h2>The goal</h2>
+            <h2>What we want</h2>
             <p class="bigtext fragment" id="no-legacy-code">No legacy code</p>
             <p class="bigtext fragment" data-classer="no-legacy-code" data-classer-class="struck">Less legacy code</p>
           </section>
@@ -153,9 +152,8 @@
             </ul>
           </section>
           <section>
-            <p class="bigtext">Testable code</p>
+            <p class="bigtext">What we really want is testable code</p>
             <div class="fragment">
-              <p>Stand in for</p>
               <ul>
                 <li>Loosely coupled / Uncoupled</li>
                 <li>Injectable</li>
@@ -163,10 +161,6 @@
                 <li>"Good"</li>
               </ul>
             </div>
-          </section>
-          <section>
-            <img src="assets/druplicon.svg" style="width: 50%" alt="Druplicon" />
-            <p class="fragment">If we can do it, so can you</p>
           </section>
         </section>
         <section>
@@ -208,12 +202,7 @@
             <h3>... with <em>lots</em> of friends</h3>
             <img src="assets/drupalcon-portland.jpg" alt="DrupalCon Portland" />
           </section>
-        </section>
-        <section>
           <section data-background="assets/drupal-delorean.jpg">
-            <div style="font-weight: bold; position: relative; top: 10em; text-shadow: 2px 2px 2px #000;">
-              <p>circa 2011</p>
-            </div>
           </section>
           <section>
             <h2>WSCCI</h2>
@@ -236,7 +225,7 @@
             <img src="assets/drufony.png" alt="Drupal + Symfony = Drufony" style="max-height: 500px;" />
             <aside class="notes">
               <ul>
-                <li>HttpInterface first, then Kernel, then snowball</li>
+                <li>HttpFoundation first, then Kernel, then snowball</li>
               </ul>
             </aside>
           </section>
@@ -258,10 +247,10 @@
             <p class="bigtext">Learn from our <span id="our-experience">experience</span> <span class="fragment" data-classer="our-experience" data-classer-class="struck">mistakes</span></p>
           </section>
         </section>
-        <section class="social">
+
+        <section>
           <section>
-            <h2>#1</h2>
-            <h2 class="fragment">Messaging matters</h2>
+            Plan ahead (management)
           </section>
           <section>
             <p>People need to see value</p>
@@ -308,41 +297,6 @@
               </ul>
             </aside>
           </section>
-        </section>
-        <section class="technical">
-          <section>
-            <h2>#2</h2>
-            <h2 class="fragment">Don't write unit tests</h2>
-          </section>
-          <section>
-            <h2>Say WAT?</h2>
-            <img src="assets/chris-hartjes-grumpy-cropped.jpg" alt="Grumpy does not approve!" style="height: 100%;" data-credit="https://www.flickr.com/photos/akrabat/8421560178/" />
-          </section>
-          <section>
-            <h2>Write integration tests</h2>
-            <ul>
-              <li class="fragment">If your code were already testable we'd be done</li>
-              <li class="fragment">Unit tests change with the unit</li>
-              <li class="fragment">Unit test the new stuff</li>
-              <li class="fragment">Don't break <em>user</em> functionality</li>
-              <li class="fragment">100% green at all times</li>
-            </ul>
-          </section>
-          <section>
-            <p>Drupal wrote its own testing framework</p>
-            <p class="fragment">(Please please do not do this)</p>
-            <p class="fragment">Having those tests saved our butts</p>
-            <p>
-              <img class="fragment" src="assets/behat-logo.png" alt="Behat" style="background: lightgray;" />
-              <img class="fragment" src="assets/selenium-logo.png" alt="Selenium" />
-            </p>
-          </section>
-          <section>
-            <p>Functional tests are for functionality... only</p>
-            <p class="fragment">Pseudo-unit tests are worse than no tests</p>
-          </section>
-        </section>
-        <section class="social">
           <section>
             <h2>#3</h2>
             <h2 class="fragment">Establish a beachhead</h2>
@@ -432,7 +386,126 @@
             <blockquote>The right approach technically<br />and the right approach politically<br />may be completely different.</blockquote>
           </section>
         </section>
-        <section class="technical">
+        <section>
+          <section>
+            Structure matters
+          </section>
+          <section>
+            <h2>#8</h2>
+            <h2 class="fragment">Undivided attention matters</h2>
+          </section>
+          <section>
+            <p>Work does not get done in spare time</p>
+            <aside class="notes">
+              <ul>
+                <li>"In-house projects" happen when?</li>
+                <li>Nights and weekends SUCK.</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <p>Context switching sucks</p>
+            <aside class="notes">
+              <ul>
+                <li>Does this even need to be argued anymore?</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <blockquote>Give me 5 people 10 hours a week and I can do anything. Give me 50 people one hour a week and I can't do squat.</blockquote>
+            <p>&mdash; Larry Garfield, 2011 <span class="fragment">and 2012</span> <span class="fragment">and 2013</span></p>
+          </section>
+          <section>
+            <h3>Sprints</h3>
+            <ul>
+              <li class="fragment"><em>In person</em> collaboration</li>
+              <li class="fragment"><em>Small</em> group</li>
+              <li class="fragment"><em>Dedicated</em> time</li>
+              <li class="fragment"><em>Right</em> people</li>
+            </ul>
+            <div class="fragment">
+              <blockquote>"if you give 3 people 3 days to work together on something, they’ll get unbelievable amounts of work done."</blockquote>
+              <p>&mdash; Tim Plunkett, Drupal 8 developer #2</p>
+            </div>
+          </section>
+          <section>
+            <h2>#9</h2>
+            <h2 class="fragment">Beware the bikeshed</h2>
+          </section>
+          <section>
+            <img src="assets/nuclear-reactor-control.jpg" alt="Nuclear reactors are complicated" data-credit="https://www.flickr.com/photos/martinpro/2138123729" />
+          </section>
+          <section>
+            <img src="assets/bikeshed.jpg" alt="Bikesheds are dangerous places" data-credit="https://www.flickr.com/photos/simonsmithster/3418651078" />
+          </section>
+          <section>
+            <h3>Configuration system</h3>
+            <ul>
+              <li class="fragment">Feature change #1</li>
+              <li class="fragment">Staging &amp; Deployment: Solved!</li>
+              <li class="fragment">June 2011: 3 day 5 person sprint, Denver</li>
+              <li class="fragment">Detailed recommendation</li>
+              <li class="fragment">Files on disk, load system, API, staging, etc.</li>
+              <li class="fragment" id="cmi-format-list">Format: JSON, YAML, XML?</li>
+            </ul>
+            <span class="fragment" data-classer="cmi-format-list" data-classer-class="bigdeal"></span>
+          </section>
+          <section>
+            <img src="assets/picard-riker-facepalm.jpg" alt="Picard-Riker Face Palm" />
+            <aside class="notes">
+              <ul>
+                <li>Eventually JSON, because easy</li>
+                <li>Moved to YAML, because docs</li>
+                <li>No one loves XML anymore. :-(</li>
+                <li></li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <h3>Bikeshed stoppers</h3>
+            <p class="fragment">Strong leadership, solid communication, luck</p>
+            <aside class="notes">
+              <ul>
+                <li>Strong leaders know when to say Shut Up</li>
+              </ul>
+            </aside>
+          </section>
+        </section>
+        <section>
+          <section>
+            Line up your tools
+          </section>
+          <section>
+            <h2>#2</h2>
+            <h2 class="fragment">Don't write unit tests</h2>
+          </section>
+          <section>
+            <h2>Say WAT?</h2>
+            <img src="assets/chris-hartjes-grumpy-cropped.jpg" alt="Grumpy does not approve!" style="height: 100%;" data-credit="https://www.flickr.com/photos/akrabat/8421560178/" />
+          </section>
+          <section>
+            <h2>Write integration tests</h2>
+            <ul>
+              <li class="fragment">If your code were already testable we'd be done</li>
+              <li class="fragment">Unit tests change with the unit</li>
+              <li class="fragment">Unit test the new stuff</li>
+              <li class="fragment">Don't break <em>user</em> functionality</li>
+              <li class="fragment">100% green at all times</li>
+            </ul>
+          </section>
+          <section>
+            <p>Drupal wrote its own testing framework</p>
+            <p class="fragment">(Please please do not do this)</p>
+            <p class="fragment">Having those tests saved our butts</p>
+            <p>
+              <img class="fragment" src="assets/behat-logo.png" alt="Behat" style="background: lightgray;" />
+              <img class="fragment" src="assets/selenium-logo.png" alt="Selenium" />
+            </p>
+          </section>
+          <section>
+            <p>Functional tests are for functionality... only</p>
+            <p class="fragment">Pseudo-unit tests are worse than no tests</p>
+          </section>
           <section>
             <h2>#4</h2>
             <h3>Outsourcing is good for you</h3>
@@ -460,7 +533,7 @@
             <h3>For new functionality</h3>
             <div class="fragment">
               <blockquote>Writing code should not be the 1st response. Finding if shared code exists should be the 1st response.</blockquote>
-              <p>&mdash; <a href="https://twitter.com/e3BethT/status/457207489851686913">Beth Tucker-Long</a></p>
+              <p>&mdash; <a href="https://twitter.com/e3BethT/status/457207489851686913">Beth Tucker-Long</a>, [php]Architect</p>
             </div>
             <p class="fragment" style="margin-top: 1em;">Drupal never seriously considered writing a YAML parser</p>
             <aside class="notes">
@@ -541,8 +614,58 @@
               <li class="fragment">Share!</li>
             </ul>
           </section>
+          <section>
+            <h2>#10</h2>
+            <h2 class="fragment">Tools matter</h2>
+          </section>
+          <section>
+            <img src="assets/automate-all-the-things.jpg" alt="Automate all the things!" />
+          </section>
+          <section>
+            <p style="text-align: left;">You want 100% green tests?</p>
+            <p style="text-align: right;" class="fragment">CI server or it won't happen</p>
+            <aside class="notes">
+              <ul>
+                <li>Testbot sucks, but it saves our butt daily.</li>
+                <li>Travis?</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <h3>Performance</h3>
+            <blockquote>When you commit enough regressions, it gets harder to measure new ones.</blockquote>
+            <p>&mdash;Nathaniel Catchpole (catch)</p>
+            <aside class="notes">
+              <ul>
+                <li>OOP code isn't slower</li>
+                <li>Refactoring can break things</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <h3>Code review</h3>
+            <ul>
+              <li class="fragment"><a href="https://dreditor.org/">Dreditor</a></li>
+              <li class="fragment">GitHub Pull Requests</li>
+              <li class="fragment">Please don't use patches...</li>
+            </ul>
+            <p class="fragment" style="margin-top: 1em;">Make contributing easy... <span class="fragment">especially in-house</span></p>
+          </section>
+          <section>
+            <p class="bigtext">Use an IDE</p>
+            <p class="fragment roll-in" style="margin-top: 1em;">(Sorry vim users)</p>
+            <aside class="notes">
+              <ul>
+                <li>IDE usage has gone up in Drupal for D8</li>
+                <li>Big codebases need management. Deal.</li>
+              </ul>
+            </aside>
+          </section>
         </section>
-        <section class="technical">
+        <section>
+          <section>
+            Incremental progress is progress
+          </section>
           <section>
             <h2>#5</h2>
             <h2 class="fragment">User a Service Locator</h2>
@@ -663,8 +786,6 @@ class BookManager {
           <section>
             <p>Service locators are a stepping stone<br />toward Dependency Injection</p>
           </section>
-        </section>
-        <section class="technical">
           <section>
             <h2>#6</h2>
             <h2 class="fragment">Break things in steps</h2>
@@ -776,8 +897,6 @@ class Cache {
             </ul>
             <p class="fragment" style="margin-top: 1em;">Changesets that just remove legacy use<br /><em>must</em> be acceptable</p>
           </section>
-        </section>
-        <section class="technical">
           <section>
             <h2>#7</h2>
             <h2 class="fragment">Incremental progress is<br />still progress</h2>
@@ -792,9 +911,6 @@ class Cache {
                 <li>Code improvement has to be seen as intrinsically valuable</li>
               </ul>
             </aside>
-          </section>
-          <section>
-            <h2>Messaging matters</h2>
           </section>
           <section>
             <p>Don't bite off more than you can chew</p>
@@ -865,144 +981,6 @@ function drupal_rebuild_form($form_id, &$form_state, $old = NULL) {
             </code></pre>
           </section>
           <section>
-            <h3>The More You Know...</h3>
-          </section>
-        </section>
-        <section class="social">
-          <section>
-            <h2>#8</h2>
-            <h2 class="fragment">Undivided attention matters</h2>
-          </section>
-          <section>
-            <p>Work does not get done in spare time</p>
-            <aside class="notes">
-              <ul>
-                <li>"In-house projects" happen when?</li>
-                <li>Nights and weekends SUCK.</li>
-              </ul>
-            </aside>
-          </section>
-          <section>
-            <p>Context switching sucks</p>
-            <aside class="notes">
-              <ul>
-                <li>Does this even need to be argued anymore?</li>
-              </ul>
-            </aside>
-          </section>
-          <section>
-            <blockquote>Give me 5 people 10 hours a week and I can do anything. Give me 50 people one hour a week and I can't do squat.</blockquote>
-            <p>&mdash; Larry Garfield, 2011 <span class="fragment">and 2012</span> <span class="fragment">and 2013</span></p>
-          </section>
-          <section>
-            <h3>Sprints</h3>
-            <ul>
-              <li class="fragment"><em>In person</em> collaboration</li>
-              <li class="fragment"><em>Small</em> group</li>
-              <li class="fragment"><em>Dedicated</em> time</li>
-              <li class="fragment"><em>Right</em> people</li>
-            </ul>
-            <div class="fragment">
-              <blockquote>"if you give 3 people 3 days to work together on something, they’ll get unbelievable amounts of work done."</blockquote>
-              <p>&mdash; Tim Plunkett</p>
-            </div>
-          </section>
-        </section>
-        <section class="social">
-          <section>
-            <h2>#9</h2>
-            <h2 class="fragment">Beware the bikeshed</h2>
-          </section>
-          <section>
-            <img src="assets/nuclear-reactor-control.jpg" alt="Nuclear reactors are complicated" data-credit="https://www.flickr.com/photos/martinpro/2138123729" />
-          </section>
-          <section>
-            <img src="assets/bikeshed.jpg" alt="Bikesheds are dangerous places" data-credit="https://www.flickr.com/photos/simonsmithster/3418651078" />
-          </section>
-          <section>
-            <h3>Configuration system</h3>
-            <ul>
-              <li class="fragment">Feature change #1</li>
-              <li class="fragment">Staging &amp; Deployment: Solved!</li>
-              <li class="fragment">June 2011: 3 day 5 person sprint, Denver</li>
-              <li class="fragment">Detailed recommendation</li>
-              <li class="fragment">Files on disk, load system, API, staging, etc.</li>
-              <li class="fragment" id="cmi-format-list">Format: JSON, YAML, XML?</li>
-            </ul>
-            <span class="fragment" data-classer="cmi-format-list" data-classer-class="bigdeal"></span>
-          </section>
-          <section>
-            <img src="assets/picard-riker-facepalm.jpg" alt="Picard-Riker Face Palm" />
-            <aside class="notes">
-              <ul>
-                <li>Eventually JSON, because easy</li>
-                <li>Moved to YAML, because docs</li>
-                <li>No one loves XML anymore. :-(</li>
-                <li></li>
-              </ul>
-            </aside>
-          </section>
-          <section>
-            <h3>Bikeshed stoppers</h3>
-            <p class="fragment">Strong leadership, solid communication, luck</p>
-            <aside class="notes">
-              <ul>
-                <li>Strong leaders know when to say Shut Up</li>
-              </ul>
-            </aside>
-          </section>
-        </section>
-        <section class="technical">
-          <section>
-            <h2>#10</h2>
-            <h2 class="fragment">Tools matter</h2>
-          </section>
-          <section>
-            <img src="assets/automate-all-the-things.jpg" alt="Automate all the things!" />
-          </section>
-          <section>
-            <p style="text-align: left;">You want 100% green tests?</p>
-            <p style="text-align: right;" class="fragment">CI server or it won't happen</p>
-            <aside class="notes">
-              <ul>
-                <li>Testbot sucks, but it saves our butt daily.</li>
-                <li>Travis?</li>
-              </ul>
-            </aside>
-          </section>
-          <section>
-            <h3>Performance</h3>
-            <blockquote>When you commit enough regressions, it gets harder to measure new ones.</blockquote>
-            <p>&mdash;Nathaniel Catchpole (catch)</p>
-            <aside class="notes">
-              <ul>
-                <li>OOP code isn't slower</li>
-                <li>Refactoring can break things</li>
-              </ul>
-            </aside>
-          </section>
-          <section>
-            <h3>Code review</h3>
-            <ul>
-              <li class="fragment"><a href="https://dreditor.org/">Dreditor</a></li>
-              <li class="fragment">GitHub Pull Requests</li>
-              <li class="fragment">Please don't use patches...</li>
-            </ul>
-            <p class="fragment" style="margin-top: 1em;">Make contributing easy... <span class="fragment">especially in-house</span></p>
-          </section>
-          <section>
-            <p class="bigtext">Use an IDE</p>
-            <p class="fragment roll-in" style="margin-top: 1em;">(Sorry vim users)</p>
-            <aside class="notes">
-              <ul>
-                <li>IDE usage has gone up in Drupal for D8</li>
-                <li>Big codebases need management. Deal.</li>
-              </ul>
-            </aside>
-          </section>
-        </section>
-        <section class="technical">
-          <section>
             <h2>#11</h2>
             <h2 class="fragment">Perfectionism has its place</h2>
           </section>
@@ -1042,11 +1020,17 @@ class FormBuilder {
             <p class="bigtext">Interfaces FTW</p>
             <p class="fragment" style="margin-top: 1em;">Refactor the fugly to be smaller</p>
           </section>
-          <section>
-            <p>This is a never-ending process</p>
-            <img class="fragment" src="assets/sisyphus-cat.jpg" alt="Sysyphus cat tries again" data-credit="http://cheezburger.com/887098624" />
-          </section>
         </section>
+        <section>
+          <h3>This is an ongoing process</h3>
+          <img class="fragment" src="assets/sisyphus-cat.jpg" alt="Sysyphus cat tries again" data-credit="http://cheezburger.com/887098624" />
+        </section>
+        <section>
+          <img src="assets/druplicon.svg" style="width: 50%" alt="Druplicon" />
+          <p class="fragment">If we can do it, so can you</p>
+        </section>
+
+
         <section class="social">
           <section>
             <h2>#12</h2>
@@ -1062,6 +1046,8 @@ class FormBuilder {
           <section>
             <h2>Ego is a bug</h2>
           </section>
+        </section>
+        <section>
         </section>
 
 
