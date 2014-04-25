@@ -406,11 +406,7 @@
         </section>
         <section>
           <section>
-            Structure matters
-          </section>
-          <section>
-            <h2>#8</h2>
-            <h2 class="fragment">Undivided attention matters</h2>
+            <h2>Commitment matters</h2>
           </section>
           <section>
             <p>Work does not get done in spare time</p>
@@ -426,12 +422,13 @@
             <aside class="notes">
               <ul>
                 <li>Does this even need to be argued anymore?</li>
+                <li>Meetings 1 hour increments; work 4 hour increments</li>
               </ul>
             </aside>
           </section>
           <section>
             <blockquote>Give me 5 people 10 hours a week and I can do anything. Give me 50 people one hour a week and I can't do squat.</blockquote>
-            <p>&mdash; Larry Garfield, 2011 <span class="fragment">and 2012</span> <span class="fragment">and 2013</span></p>
+            <p>&mdash;Larry Garfield, 2011 <span class="fragment">and 2012</span> <span class="fragment">and 2013</span></p>
           </section>
           <section>
             <h3>Sprints</h3>
@@ -447,8 +444,7 @@
             </div>
           </section>
           <section>
-            <h2>#9</h2>
-            <h2 class="fragment">Beware the bikeshed</h2>
+            <p class="bigtext">Beware the bikeshed</p>
           </section>
           <section>
             <img src="assets/nuclear-reactor-control.jpg" alt="Nuclear reactors are complicated" data-credit="https://www.flickr.com/photos/martinpro/2138123729" />
@@ -473,7 +469,7 @@
             <aside class="notes">
               <ul>
                 <li>Eventually JSON, because easy</li>
-                <li>Moved to YAML, because docs</li>
+                <li>Moved to YAML, because docs/UTF-8</li>
                 <li>No one loves XML anymore. :-(</li>
                 <li></li>
               </ul>
@@ -484,18 +480,20 @@
             <p class="fragment">Strong leadership, solid communication, luck</p>
             <aside class="notes">
               <ul>
-                <li>Strong leaders know when to say Shut Up</li>
+                <li>Strong leaders know when to say Shut Up in a way people appreciate</li>
+                <li></li>
+                <li>So now that you're doing it, how do you do it, tactically?</li>
               </ul>
             </aside>
           </section>
         </section>
         <section>
           <section>
-            Line up your tools
+            <blockquote>Proper prior planning prevents piss poor performance</blockquote>
+            <p>&mdash;<a href="http://en.wikipedia.org/wiki/7_Ps_%28military_adage%29">British military adage</a></p>
           </section>
           <section>
-            <h2>#2</h2>
-            <h2 class="fragment">Don't write unit tests</h2>
+            <p class="bigtext">Don't write unit tests</p>
           </section>
           <section>
             <h2>Say WAT?</h2>
@@ -525,8 +523,7 @@
             <p class="fragment">Pseudo-unit tests are worse than no tests</p>
           </section>
           <section>
-            <h2>#4</h2>
-            <h3>Outsourcing is good for you</h3>
+            <p class="bigtext">Sharing is caring</p>
           </section>
           <section>
             <p>Modern PHP is all about sharing</p>
@@ -551,7 +548,7 @@
             <h3>For new functionality</h3>
             <div class="fragment">
               <blockquote>Writing code should not be the 1st response. Finding if shared code exists should be the 1st response.</blockquote>
-              <p>&mdash; <a href="https://twitter.com/e3BethT/status/457207489851686913">Beth Tucker-Long</a>, [php]Architect</p>
+              <p>&mdash; <a href="https://twitter.com/e3BethT/status/457207489851686913">Beth Tucker-Long</a>, Editor-in-Chief, php[architect]</p>
             </div>
             <p class="fragment" style="margin-top: 1em;">Drupal never seriously considered writing a YAML parser</p>
             <aside class="notes">
@@ -572,17 +569,17 @@
             <ul>
               <li class="fragment">HTTP/1.0 client</li>
               <li class="fragment">One 304 line function <span class="fragment">(No, really)</span></li>
-              <li class="fragment">Cyclomatic complexity: 41</li>
               <li class="fragment">N-Path complexity: 25,303,344,960</li>
               <li class="fragment">Lacking a number of features (proxy support)</li>
             </ul>
-            <span class="fragment" data-classer="dhr" data-classer-class="struck"> </span>
+            <span class="fragment" data-classer="dhr" data-classer-class="struck">&nbsp;</span>
           </section>
           <section>
-            <h3>Guzzle</h3>
+            <h3>Use Guzzle instead</h3>
             <p class="fragment">We did our <a href="https://groups.drupal.org/node/233173">research</a>!</p>
+            <img src="assets/guzzle-logo.png" style="flat: left; width: 200px" alt="Guzzle logo" />
             <ul>
-              <li class="fragment">HTTP/1.1</li>
+              <li class="fragment" style="padding-top: 2em;">HTTP/1.1</li>
               <li class="fragment">Well-tested</li>
               <li class="fragment">Loosely coupled</li>
               <li class="fragment">Widely used</li>
@@ -625,7 +622,7 @@
             </aside>
           </section>
           <section>
-            <h3>Outsource to yourself</h3>
+            <h3>Share with yourself</h3>
             <ul>
               <li class="fragment">Build new code as components</li>
               <li class="fragment">Write it right</li>
@@ -682,11 +679,20 @@
         </section>
         <section>
           <section>
-            Incremental progress is progress
+            <blockquote>The Best is the Enemy of Good</blockquote>
+            <p>&mdash;Voltaire <span class="fragment">(and my dad)</span></p>
+            <p class="fragment" style="margin-top: 1em;">Idealism is a guide, not a rule</p>
           </section>
           <section>
-            <h2>#5</h2>
-            <h2 class="fragment">User a Service Locator</h2>
+            <p class="bigtext">Incremental progress is progress</p>
+            <aside class="notes">
+              <ul>
+                <li>Hard to remember when you don't know when your deadline is.</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <p class="bigtext">User a Service Locator</p>
           </section>
           <section>
             <h2>WAT?</h2>
@@ -726,17 +732,11 @@ class Drupal {
     return static::$container->get($id);
   }
 
-  public static function request() {
-    return static::$container->get('request');
-  }
-
   public static function entityManager() {
     return static::$container->get('entity.manager');
   }
 
-  public static function database() {
-    return static::$container->get('database');
-  }
+  // ...
 }
             </code></pre>
           </section>
@@ -823,18 +823,6 @@ class BookManager {
           <section>
             <h3>Drupal 7</h3>
             <pre><code class="php" data-trim>
-function _cache_get_object($bin) {
-  static $cache_objects;
-  if (!isset($cache_objects[$bin])) {
-    $class = variable_get('cache_class_' . $bin);
-    if (!isset($class)) {
-      $class = variable_get('cache_default_class', 'DrupalDatabaseCache');
-    }
-    $cache_objects[$bin] = new $class($bin);
-  }
-  return $cache_objects[$bin];
-}
-
 function cache_get($cid, $bin = 'cache') {
   return _cache_get_object($bin)->get($cid);
 }
@@ -864,41 +852,19 @@ function cache($bin = 'cache') {
             </code></pre>
             <pre class="fragment"><code class="php" data-trim>
 function something() {
-  $item = cache_get('menu', 'akey');
+  $item = cache_get('menu', 'a_key');
 }
             </code></pre>
             <pre class="fragment"><code class="php" data-trim>
 function something() {
-  $item = cache()->get('akey');
+  $item = cache()->get('a_key');
 }
             </code></pre>
             <pre class="fragment"><code class="php" data-trim>
 function something() {
-  $item = \Drupal::cache('menu')->get('akey');
+  $item = \Drupal::cache('menu')->get('a_key');
 }
             </code></pre>
-          </section>
-          <section>
-            <h3>Drupal 8 (current)</h3>
-            <pre><code class="php" data-trim>
-class Cache {
-  public static function deleteTags(array $tags) {
-    foreach (static::getBins() as $cache_backend) {
-      $cache_backend->deleteTags($tags);
-    }
-  }
-
-  public static function getBins() {
-    $bins = array();
-    $container = \Drupal::getContainer();
-    foreach ($container->getParameter('cache_bins') as $service_id => $bin) {
-      $bins[$bin] = $container->get($service_id);
-    }
-    return $bins;
-  }
-}
-            </code></pre>
-            <p class="fragment">Is this code <em>worth testing</em>?</p>
           </section>
           <section>
             <p><q>Nothing is more permanent than a temporary solution</q></p>
@@ -914,10 +880,6 @@ class Cache {
               <li class="fragment">Sunset plan: <span class="fragment">release blocking?</span></li>
             </ul>
             <p class="fragment" style="margin-top: 1em;">Changesets that just remove legacy use<br /><em>must</em> be acceptable</p>
-          </section>
-          <section>
-            <h2>#7</h2>
-            <h2 class="fragment">Incremental progress is<br />still progress</h2>
           </section>
           <section>
             <p>Changesets that just remove legacy use<br /><em>must</em> be acceptable</p>
@@ -1001,11 +963,6 @@ function drupal_rebuild_form($form_id, &$form_state, $old = NULL) {
           <section>
             <h2>#11</h2>
             <h2 class="fragment">Perfectionism has its place</h2>
-          </section>
-          <section>
-            <blockquote>The Best is the Enemy of Good</blockquote>
-            <p>&mdash;Volaire <span class="fragment">(and my dad)</span></p>
-            <p class="fragment" style="margin-top: 1em;">Idealism is a guide, not a rule</p>
           </section>
           <section>
             <p>No program will ever be perfect<span class="fragment">, just make it better</span></p>
