@@ -58,7 +58,7 @@
   // by data-classer-class added to it. When the fragment is hidden the class
   // will be removed.
 
-  var classerIndex;
+  var classerIndex = 0;
 
   document.addEventListener('DOMContentLoaded', function() {
     Array.prototype.forEach.call(document.querySelectorAll('[data-classer]'), function(el, i) {
@@ -83,19 +83,6 @@
       }
     });
   };
-
-})();
-
-(function() {
-  return;
-  document.addEventListener('DOMContentLoaded', function() {
-    Array.prototype.forEach.call(document.querySelectorAll('section.social > section:first-child'), function(el, i) {
-      el.setAttribute('data-background', '#0000cc');
-    });
-    Array.prototype.forEach.call(document.querySelectorAll('section.technical > section:first-child'), function(el, i) {
-      el.setAttribute('data-background', '#00cc00');
-    });
-  });
 
 })();
 
