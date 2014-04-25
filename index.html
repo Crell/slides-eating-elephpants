@@ -157,6 +157,8 @@
               <ul>
                 <li>Loosely coupled / Uncoupled</li>
                 <li>Injectable</li>
+                <li>Reusable</li>
+                <li>Easily understandable</li>
                 <li>Modern</li>
                 <li>"Good"</li>
               </ul>
@@ -164,6 +166,9 @@
           </section>
         </section>
         <section>
+          <section>
+            <p class="bigtext">Evolution is possible!</p>
+          </section>
           <section>
             <img src="assets/drupal-7-logo.jpg" style="height: 200px;" alt="Drupal 7" data-credit="https://association.drupal.org/files/drupal-7-logo.jpg" />
             <ul>
@@ -182,27 +187,25 @@
               <li class="fragment">Architecturally OOP</li>
               <li class="fragment">4600 unit tests (and counting)</li>
               <li class="fragment">Flexible architecture</li>
-              <li class="fragment">Even bigger community</li>
+              <li class="fragment">>2x contributors</li>
             </ul>
             <p style="clear: both; margin-top: 2em;" class="fragment">How'd they do that?</p>
           </section>
           <section>
             <h3>How does one eat an elePHPant?</h3>
-            <img src="assets/eat-elephpant.jpg" alt="How do you eat an elephant?" />
+            <img src="assets/eat-elephpant.jpg" style="width: 80%" alt="How do you eat an elephpant?" />
           </section>
           <section>
             <h3>One bite at a time...</h3>
-            <img src="assets/eat-elephpants-mini.jpg" alt="One bite at a time" />
+            <img src="assets/eat-elephpants-mini.jpg" style="width: 80%" alt="One bite at a time" />
           </section>
           <section>
             <h3>... with friends</h3>
-            <img src="assets/eat-elephpants-friends.jpg" alt="With friends" />
+            <img src="assets/eat-elephpants-friends.jpg" style="width: 80%" alt="With friends" />
           </section>
           <section>
             <h3>... with <em>lots</em> of friends</h3>
-            <img src="assets/drupalcon-portland.jpg" alt="DrupalCon Portland" />
-          </section>
-          <section data-background="assets/drupal-delorean.jpg">
+            <img src="assets/drupalcon-portland.jpg" style="width: 80%" alt="DrupalCon Portland" />
           </section>
           <section>
             <h2>WSCCI</h2>
@@ -250,7 +253,18 @@
 
         <section>
           <section>
-            Plan ahead (management)
+            <blockquote>Plans are worthless, but planning is everything.</blockquote>
+            <p>&mdash;Dwight Eisenhower</p>
+          </section>
+          <section>
+            <p class="bigtext">Are you refactoring<br />or adding refactored features?</p>
+            <aside class="notes">
+              <ul>
+                <li>Drupal wanted features; new-style was means to end</li>
+                <li>Some people taken by surprise by refactoring</li>
+                <li>Refactoring for its own sake came later</li>
+              </ul>
+            </aside>
           </section>
           <section>
             <p>People need to see value</p>
@@ -264,6 +278,9 @@
             </aside>
           </section>
           <section>
+            <p class="bigtext">Is refactoring valuable?</p>
+          </section>
+          <section>
             <p><q>Code quality doesn't matter, only user experience matters</q></p>
             <p class="fragment" style="margin-top: 2em;">Fire anyone who says this</p>
             <p class="fragment" style="margin-top: 2em;">Developers are users... <span class="fragment">of code</span></p>
@@ -274,6 +291,9 @@
             </aside>
           </section>
           <section>
+            <p class="bigtext">Clear messaging</p>
+          </section>
+          <section>
             <p class="bigtext">Repeat your message</p>
             <p class="fragment">Everyone wants to hear the message themselves</p>
             <p class="fragment">Need to repeat it in different ways</p>
@@ -282,31 +302,16 @@
               <ul>
                 <li>Blogs, IRC, pub. discussions, conferences</li>
                 <li>Took a year for people to stop asking "so what is WSCCI?"</li>
-              </ul>
-            </aside>
-          </section>
-          <section>
-            <p class="bigtext">Reiterate your message</p>
-            <p class="fragment">Different people respond to different messaging</p>
-            <p class="fragment">Everyone wants to feel special</p>
-            <p class="fragment">It's a total waste of time... <span class="fragment">Do it anyway</span></p>
-            <aside class="notes">
-              <ul>
                 <li>Politicians sound like canned responses because they are canned</li>
-                <li>Took a year for people to stop asking "so what is WSCCI?"</li>
               </ul>
             </aside>
-          </section>
-          <section>
-            <h2>#3</h2>
-            <h2 class="fragment">Establish a beachhead</h2>
           </section>
           <section>
             <p style="text-align: left;"><q>The new code will be better</q></p>
             <p style="text-align: right; margin-top: 1em;" class="fragment"><q>I'll believe it when I see it</q></p>
           </section>
           <section>
-            <h2>DBTNG</h2>
+            <h2>The first taste</h2>
             <ul>
               <li class="fragment">Drupal 7 DBAL</li>
               <li class="fragment">Home grown (Sorry, Doctrine)</li>
@@ -314,10 +319,16 @@
               <li class="fragment"><q>See, it's not so scary</q></li>
             </ul>
             <p style="margin-top: 1em;" class="fragment">c. 2008-2011</p>
+            <aside class="notes">
+              <ul>
+                <li>Very successful; way easier for devs than manual</li>
+              </ul>
+            </aside>
           </section>
           <section>
-            <h2>Routing / Web services</h2>
+            <h2>The big bite</h2>
             <ul>
+              <li class="fragment">Routing / Web services</li>
               <li class="fragment">REST-ify routing</li>
               <li class="fragment">Lots of Symfony code</li>
             </ul>
@@ -331,11 +342,15 @@
             </aside>
           </section>
           <section>
-            <h2>Goal: It's not so scary</h2>
-            <h2 class="fragment">Goal: Demonstrate benefit</h2>
-            <p class="fragment">(Shame the old code, not the old coders)</p>
+            <p class="bigtext">Make the old code feel clunkier in comparison</p>
+          </section>
+          <section>
+            <p class="bigtext">Shame the old code, not the old coders</p>
             <aside class="notes">
-              Make the old code feel clunkier, so people want to refactor it.
+              <ul>
+                <li>Half of it was your code anyway</li>
+                <li>You want friends helping, not fighting you</li>
+              </ul>
             </aside>
           </section>
           <section>
@@ -384,6 +399,9 @@
           </section>
           <section>
             <blockquote>The right approach technically<br />and the right approach politically<br />may be completely different.</blockquote>
+          </section>
+          <section>
+            <p>There are costs to inconsistency...</p>
           </section>
         </section>
         <section>
@@ -558,7 +576,7 @@
               <li class="fragment">N-Path complexity: 25,303,344,960</li>
               <li class="fragment">Lacking a number of features (proxy support)</li>
             </ul>
-            <span class="fragment" data-classer="dhr" data-classer-class="struck"></span>
+            <span class="fragment" data-classer="dhr" data-classer-class="struck"> </span>
           </section>
           <section>
             <h3>Guzzle</h3>
@@ -683,7 +701,7 @@
           </section>
           <section>
             <p>Remember what we said about small steps?</p>
-            <img src="assets/eat-elephpants-mini.jpg" alt="One bite at a time" />
+            <img src="assets/eat-elephpants-mini.jpg" style="width: 80%" alt="One bite at a time" />
             <aside class="notes">
               <ul>
                 <li>An SL is better than functions</li>
@@ -1025,29 +1043,13 @@ class FormBuilder {
           <h3>This is an ongoing process</h3>
           <img class="fragment" src="assets/sisyphus-cat.jpg" alt="Sysyphus cat tries again" data-credit="http://cheezburger.com/887098624" />
         </section>
+          <section>
+            <h3>One bite at a time, with friends</h3>
+            <img src="assets/eat-elephpants-friends.jpg" style="width: 80%" alt="With friends" />
+          </section>
         <section>
           <img src="assets/druplicon.svg" style="width: 50%" alt="Druplicon" />
           <p class="fragment">If we can do it, so can you</p>
-        </section>
-
-
-        <section class="social">
-          <section>
-            <h2>#12</h2>
-            <h2 class="fragment">Check your ego at the door</h2>
-            <aside class="notes">
-              <ul>
-                <li>Refactoring code? You're not cool.</li>
-                <li>Wrote the code that is being refactored? It's just code.</li>
-                <li>Critique the code, not the coder.</li>
-              </ul>
-            </aside>
-          </section>
-          <section>
-            <h2>Ego is a bug</h2>
-          </section>
-        </section>
-        <section>
         </section>
 
 
