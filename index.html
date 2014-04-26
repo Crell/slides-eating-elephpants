@@ -555,7 +555,7 @@
             <h3>For existing functionality</h3>
             <p class="fragment" style="margin-top: 1em;">Refactor your app, don't replace it</p>
             <p class="fragment">Replace your component, don't refactor it</p>
-            <p class="fragment roll-in">(Especially security!)</p>
+            <p class="fragment roll-in">(Especially cryptography!)</p>
           </section>
           <section>
             <h3><code id="dhr">drupal_http_request()</code></h3>
@@ -618,12 +618,14 @@
           </section>
           <section>
             <h3>Performance</h3>
-            <blockquote>When you commit enough regressions, it gets harder to measure new ones.</blockquote>
-            <p>&mdash;Nathaniel Catchpole (catch)</p>
+            <div class="fragment">
+              <blockquote>When you commit enough regressions, it gets harder to measure new ones.</blockquote>
+              <p>&mdash;Nathaniel Catchpole (catch)</p>
+            </div>
             <aside class="notes">
               <ul>
                 <li>OOP code isn't slower</li>
-                <li>Refactoring can break things</li>
+                <li>Refactoring can break performance</li>
               </ul>
             </aside>
           </section>
@@ -640,7 +642,7 @@
         <section>
           <section>
             <blockquote>The Best is the Enemy of Good</blockquote>
-            <p>&mdash;Voltaire <span class="fragment">(and my dad)</span></p>
+            <p>&mdash;My dad <span class="fragment">(and Voltaire)</span></p>
           </section>
           <section>
             <p class="bigtext">Idealism is a guide, not a rule</p>
@@ -804,7 +806,7 @@ function cache_set($cid, $data, $bin = 'cache', $expire = CACHE_PERMANENT) {
  * @deprecated
  */
 function cache_get($cid, $bin) {
-  return \Drupal::cache($bin);
+  return cache($bin)->get($cid);
 }
 
 function cache($bin = 'cache') {
