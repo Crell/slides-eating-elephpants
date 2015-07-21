@@ -1,116 +1,81 @@
 <!doctype html>
 <html lang="en">
-
-  <head>
-    <meta charset="utf-8">
-
-    <title>Eating ElePHPants</title>
-
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-    <link rel="stylesheet" href="css/reveal.min.css">
-    <link rel="stylesheet" href="palantir/palantir.css" id="theme">
-
-    <!-- For syntax highlighting -->
-    <link rel="stylesheet" href="lib/css/zenburn.css">
-
-    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
-    <script>
-      document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
-    </script>
-
-    <!--[if lt IE 9]>
-    <script src="lib/js/html5shiv.js"></script>
-    <![endif]-->
-
-    <style>
-
-      dl dt {
-        text-align: left;
-      }
-
-      dl dd {
-        margin-left: 2em;
-        text-align: left;
-      }
-
-      .struck {
-        text-decoration: line-through;
-      }
-
-      li.bigdeal {
-        font-size: 150%;
-        color: Red;
-        font-style: italic;
-         text-shadow: 3px 3px 10px #990000;
-      }
-
-    </style>
+<head>
+  <meta charset="utf-8">
+  <title>Eating ElePHPants</title>
+  <meta name="author" content="Larry Garfield">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="palantirnet-theme/css/styles.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'palantirnet-theme/css/print/pdf.css' : 'palantirnet-theme/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->
 
 
-    <script>
-(function() {
-  // Classer utility. When a fragment with data-classer is shown, some other
-  // element withthe ID specified with data-classer will get the class specified
-  // by data-classer-class added to it. When the fragment is hidden the class
-  // will be removed.
+  <style type="text/css">
 
-  var classerIndex = 0;
-
-  document.addEventListener('DOMContentLoaded', function() {
-    Array.prototype.forEach.call(document.querySelectorAll('[data-classer]'), function(el, i) {
-      // If there's no ID, set one.
-      el.id = el.id || 'classer-' + classerIndex++;
-      runClasser(el.id, el.getAttribute('data-classer'), el.getAttribute('data-classer-class'));
-    });
-  });
-
-  var runClasser = function(id, targetId, targetClass) {
-    if (!targetId || !targetClass) {
-      return;
+    dl dt {
+      text-align: left;
     }
-    Reveal.addEventListener('fragmentshown', function(event) {
-      if (event.fragment.id === id) {
-        document.getElementById(targetId).classList.add(targetClass);
-      }
-    });
-    Reveal.addEventListener('fragmenthidden', function(event) {
-      if (event.fragment.id === id) {
-        document.getElementById(targetId).classList.remove(targetClass);
-      }
-    });
-  };
 
-})();
+    dl dd {
+      margin-left: 2em;
+      text-align: left;
+    }
 
-    </script>
+    .struck {
+      text-decoration: line-through;
+    }
 
-  </head>
+    li.bigdeal {
+      font-size: 150%;
+      color: Red;
+      font-style: italic;
+      text-shadow: 3px 3px 10px #990000;
+    }
 
-  <body>
-    <div class="reveal">
+  </style>
 
-      <div class="slides">
-        <section>
-          <h1>Eating ElePHPants</h1>
-          <p>
-            <small>Presented by <a href="http://www.garfieldtech.com/">Larry Garfield</a> (<a href="http://twitter.com/Crell">@Crell</a>)</small>
-          </p>
-        </section>
-        <section>
-          <h2><a href="http://twitter.com/Crell">@Crell</a></h2>
-          <img src="palantir/palantirnet-logo-4c-reversed.svg" alt="Palantir.net Pays me!" style="width: 300px; float: right;" />
-          <ul>
-            <li>Senior Architect, <a href="http://www.palantir.net/">Palantir.net</a></li>
-            <li>Drupal 8 Web Services Lead</li>
-            <li>Drupal Representative, <a href="http://www.php-fig.org/">PHP-FIG</a></li>
-            <li>Advisor, Drupal Association</li>
-            <li>Loveable pedant</li>
-          </ul>
-        </section>
+  <script src="palantirnet-theme/js/classer.js"></script>
+
+
+</head>
+<!-- Change body class to "dark" if you prefer a dark theme, or "light" if you'd rather have a light theme-->
+<body class="light">
+<div class="reveal">
+  <div class="logo">
+    <p>Palantir.net</p>
+  </div>
+  <!-- Any section element inside of this container is displayed as a slide -->
+  <div class="slides">
+
+    <section>
+      <h1>Eating ElePHPants</h1>
+      <p>
+        <small>Presented by <a href="http://www.garfieldtech.com/">Larry Garfield</a> (<a href="http://twitter.com/Crell">@Crell</a>)</small>
+      </p>
+    </section>
+    <section>
+      <h2><a href="http://twitter.com/Crell">@Crell</a></h2>
+      <img src="palantirnet-theme/imgs/palantirnet-logo.svg" alt="Palantir.net Pays me!" style="width: 300px; float: right;" />
+      <ul>
+        <li>Senior Architect, <a href="http://www.palantir.net/">Palantir.net</a></li>
+        <li>Drupal 8 Web Services Lead</li>
+        <li>Drupal Representative, <a href="http://www.php-fig.org/">PHP-FIG</a></li>
+        <li>Advisor, Drupal Association</li>
+        <li>Loveable pedant</li>
+      </ul>
+    </section>
 
         <section>
           <section data-background="assets/duplo-kids.jpg" data-credit="https://www.flickr.com/photos/ianus/9373214">
@@ -570,7 +535,7 @@
           <section>
             <h3>Use Guzzle instead</h3>
             <p class="fragment">We did our <a href="https://groups.drupal.org/node/233173">research</a>!</p>
-            <img src="assets/guzzle-logo.png" style="flat: left; width: 200px" alt="Guzzle logo" />
+            <img src="assets/guzzle-logo.png" style="float: left; width: 200px" alt="Guzzle logo" />
             <ul>
               <li class="fragment" style="padding-top: 2em;">HTTP/1.1</li>
               <li class="fragment">Well-tested</li>
@@ -1010,43 +975,37 @@ Incremental progress (tech)
           <p>Keep tabs on our work at <a href="http://twitter.com/Palantir">@Palantir</a></p>
           <p>Want to hear about <a href="http://eepurl.com/ws6uj">what we're doing</a>?</p>
         </section>
-      </div>
-    </div>
+  </div>
 
-    <footer class="palantir-logo">
-      <a href="http://www.palantir.net/"><img src="palantir/palantirnet-logo-4c-reversed.svg" alt="Palantir.net logo" height="40" /></a>
-    </footer>
+</div>
 
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
 
-    <script src="lib/js/head.min.js"></script>
-    <script src="js/reveal.min.js"></script>
+<script>
 
-    <script>
+  // Full list of configuration options available at:
+  // https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: true,
 
-      // Full list of configuration options available here:
-      // https://github.com/hakimel/reveal.js#configuration
-      Reveal.initialize({
-        controls: true,
-        progress: true,
-        history: true,
-        center: true,
+    transition: 'slide', // none/fade/slide/convex/concave/zoom
 
-        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+    // Optional reveal.js plugins
+    dependencies: [
+      { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'plugin/zoom-js/zoom.js', async: true },
+      { src: 'plugin/notes/notes.js', async: true }
+    ]
+  });
 
-        // Optional libraries used to extend on reveal.js
-        dependencies: [
-          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-          { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-        ]
-      });
+</script>
 
-    </script>
-
-  </body>
+</body>
 </html>
-
