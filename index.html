@@ -44,6 +44,19 @@
       text-shadow: 3px 3px 10px #990000;
     }
 
+    div.two-col {
+      display: -webkit-flex;
+      display: flex;
+      -webkit-justify-content: space-around;
+      justify-content: space-around;
+      -webkit-align-items: center;
+      align-items:         center;
+    }
+
+    .two-col * {
+
+    }
+
   </style>
 
   <script src="palantirnet-theme/js/classer.js"></script>
@@ -247,6 +260,7 @@
         <aside class="notes">
           <ul>
             <li>UX depends on developer's ability to implement; bad code, no implementation</li>
+            <li>Technical debt limits ability to develop</li>
           </ul>
         </aside>
       </section>
@@ -337,7 +351,7 @@
         <aside class="notes">
           <ul>
             <li>High risk = Not enough experience yet.</li>
-            <li>low-fruit: check_markup() is still a function. WTF?</li>
+            <li>low-fruit: drupal_set_message() is still a function. WTF?</li>
           </ul>
         </aside>
       </section>
@@ -348,7 +362,7 @@
         <p class="bigtext">Clear messaging</p>
       </section>
       <section>
-        <p class="bigtext">Repeat your message</p>
+        <p clas s="bigtext">Repeat your message</p>
         <p class="fragment">Everyone wants to hear the message themselves</p>
         <p class="fragment">Need to repeat it in different ways</p>
         <p class="fragment">It's a total waste of time... <span class="fragment">Do it anyway</span></p>
@@ -367,11 +381,17 @@
           <li class="fragment">You're moving my cheese!</li>
           <li class="fragment">Not everyone will make the transition...</li>
         </ul>
+        <aside class="notes">
+          <ul>
+            <li>Extreme cases, fork; Backdrop</li>
+            <li>Will you get more people than you lose? I think yes.</li>
+          </ul>
+        </aside>
       </section>
     </section>
     <section>
       <section>
-        <blockquote>Amateurs think about tactics, but professionals think about logistics.</blockquote>
+        <blockquote>Amateurs think about tactics,<br />but professionals think about logistics.</blockquote>
         <p>&mdash;General Robert H. Barrow, US Marine Corps</p>
       </section>
       <section>
@@ -394,7 +414,7 @@
       </section>
       <section>
         <blockquote>Give me 5 people 10 hours a week and I can do anything. Give me 50 people one hour a week and I can't do squat.</blockquote>
-        <p>&mdash;Larry Garfield, 2011 <span class="fragment">and 2012</span> <span class="fragment">and 2013</span></p>
+        <p>&mdash;Larry Garfield, 2011 <span class="fragment">and 2012</span> <span class="fragment">and 2013</span> <span class="fragment">and 2014</span></p>
       </section>
       <section>
         <h3>Sprints</h3>
@@ -408,6 +428,12 @@
           <blockquote>"if you give 3 people 3 days to work together on something, they’ll get unbelievable amounts of work done."</blockquote>
           <p>&mdash; Tim Plunkett, Drupal 8 developer #2</p>
         </div>
+        <aside class="notes">
+          <ul>
+            <li>Drupal one of the largest distrib teams in the world</li>
+            <li>We work best in person</li>
+          </ul>
+        </aside>
       </section>
       <section>
         <p class="bigtext">Beware the bikeshed</p>
@@ -423,7 +449,7 @@
         <ul>
           <li class="fragment">Feature change #1</li>
           <li class="fragment">Staging &amp; Deployment: Solved!</li>
-          <li class="fragment">June 2011: 3 day 5 person sprint, Denver</li>
+          <li class="fragment">June 2011: 3 day, 5 person sprint, Denver</li>
           <li class="fragment">Detailed recommendation</li>
           <li class="fragment">Files on disk, load system, API, staging, etc.</li>
           <li class="fragment" id="cmi-format-list">Format: JSON, YAML, XML?</li>
@@ -436,8 +462,7 @@
           <ul>
             <li>Eventually JSON, because easy</li>
             <li>Moved to YAML, because docs/UTF-8</li>
-            <li>No one loves XML anymore. :-(</li>
-            <li></li>
+            <li>XML would have been better long-run, but too much hate</li>
           </ul>
         </aside>
       </section>
@@ -463,12 +488,12 @@
       </section>
       <section>
         <h2>Say WAT?</h2>
-        <img src="assets/chris-hartjes-grumpy-cropped.jpg" alt="Grumpy does not approve!" style="height: 100%;" data-credit="https://www.flickr.com/photos/akrabat/8421560178/" />
+        <img src="assets/chris-hartjes-grumpy-cropped.jpg" alt="Grumpy does not approve!" style="width: 50%;" data-credit="https://www.flickr.com/photos/akrabat/8421560178/" />
       </section>
       <section>
-        <h2>Write integration tests</h2>
+        <h2>Write system tests</h2>
         <ul>
-          <li class="fragment">If your code were already testable we'd be done</li>
+          <li class="fragment">If your code were already unit testable we'd be done</li>
           <li class="fragment">Unit tests change with the unit</li>
           <li class="fragment">Unit test the new stuff</li>
           <li class="fragment">Don't break <em>user</em> functionality</li>
@@ -479,10 +504,16 @@
         <p>Drupal wrote its own testing framework</p>
         <p class="fragment">(Please please do not do this)</p>
         <p class="fragment">Having those tests saved our butts</p>
-        <p>
+        <p style="margin-top: 1em;">
           <img class="fragment" src="assets/behat-logo.png" alt="Behat" style="background: lightgray;" />
           <img class="fragment" src="assets/selenium-logo.png" alt="Selenium" />
         </p>
+        <aside class="notes">
+          <ul>
+            <li>Pre-Travis et al</li>
+            <li>Pre-Behat</li>
+          </ul>
+        </aside>
       </section>
       <section>
         <p>Functional tests are for functionality... only</p>
@@ -514,7 +545,7 @@
         <h3>For new functionality</h3>
         <div class="fragment">
           <blockquote>Writing code should not be the 1st response. Finding if shared code exists should be the 1st response.</blockquote>
-          <p>&mdash; <a href="https://twitter.com/e3BethT/status/457207489851686913">Beth Tucker-Long</a>, Editor-in-Chief, php[architect]</p>
+          <p>&mdash; <a href="https://twitter.com/e3BethT/status/457207489851686913">Beth Tucker-Long</a>, Code Climate</p>
         </div>
         <p class="fragment" style="margin-top: 1em;">Drupal never seriously considered writing a YAML parser</p>
         <aside class="notes">
@@ -543,14 +574,16 @@
       <section>
         <h3>Use Guzzle instead</h3>
         <p class="fragment">We did our <a href="https://groups.drupal.org/node/233173">research</a>!</p>
-        <img src="assets/guzzle-logo.png" style="float: left; width: 200px" alt="Guzzle logo" />
-        <ul>
-          <li class="fragment" style="padding-top: 2em;">HTTP/1.1</li>
-          <li class="fragment">Well-tested</li>
-          <li class="fragment">Loosely coupled</li>
-          <li class="fragment">Widely used</li>
-          <li class="fragment">Way better than ours</li>
-        </ul>
+        <div class="two-col">
+          <img src="assets/guzzle-logo.png" style="background: #344041; width: 200px" alt="Guzzle logo" />
+          <ul>
+            <li class="fragment" style="padding-top: 2em;">HTTP/1.1</li>
+            <li class="fragment">Well-tested</li>
+            <li class="fragment">Loosely coupled</li>
+            <li class="fragment">Widely used</li>
+            <li class="fragment">Much better than ours</li>
+          </ul>
+        </div>
         <p class="fragment" style="margin-top: 1em;"><code>s/drupal_http_request()/Guzzle/</code></p>
         <aside class="notes">
           <ul>
@@ -565,6 +598,7 @@
           <ul>
             <li>Outsourcing has costs; lack of control</li>
             <li>It often has value... but not always</li>
+            <li>Still using own DBAL</li>
           </ul>
         </aside>
       </section>
@@ -575,6 +609,11 @@
           <li class="fragment">Write it right</li>
           <li class="fragment">Share!</li>
         </ul>
+        <aside class="notes">
+          <ul>
+            <li>\Drupal\Component</li>
+          </ul>
+        </aside>
       </section>
       <section>
         <img src="assets/automate-all-the-things.jpg" alt="Automate all the things!" />
@@ -593,7 +632,7 @@
         <h3>Performance</h3>
         <div class="fragment">
           <blockquote>When you commit enough regressions, it gets harder to measure new ones.</blockquote>
-          <p>&mdash;Nathaniel Catchpole (catch)</p>
+          <p>&mdash;Nathaniel Catchpole (catch), Drupal 8 Release Manager</p>
         </div>
         <aside class="notes">
           <ul>
@@ -653,7 +692,7 @@
         </aside>
       </section>
       <section>
-        <pre><code class="php" data-trim>
+        <pre class="font--20"><code class="php" data-trim>
 class Drupal {
   protected static $container;
 
@@ -676,9 +715,15 @@ class Drupal {
   // ...
 }
         </code></pre>
+        <aside class="notes">
+          <ul>
+            <li>Only one global</li>
+            <li>For procedural code only!</li>
+          </ul>
+        </aside>
       </section>
       <section>
-        <pre><code class="php" data-trim>
+        <pre class="font--20"><code class="php" data-trim>
 function menu_menu_update(Menu $menu) {
   menu_cache_clear_all();
   // Invalidate the block cache to update menu-based derivatives.
@@ -687,9 +732,14 @@ function menu_menu_update(Menu $menu) {
   }
 }
         </code></pre>
+        <aside class="notes">
+          <ul>
+            <li>Still ugly, but the code it calls doesn't have to be.</li>
+          </ul>
+        </aside>
       </section>
       <section>
-        <pre><code class="php" data-trim>
+        <pre class="font--20"><code class="php" data-trim>
 class BookManager {
 
   public function bookTreeAllData($bid, $link = NULL, $max_depth = NULL) {
@@ -701,9 +751,14 @@ class BookManager {
   }
 }
         </code></pre>
+        <aside class="notes">
+          <ul>
+            <li>No injection, legacy procedural code</li>
+          </ul>
+        </aside>
       </section>
       <section>
-        <pre><code class="php" data-trim>
+        <pre class="font--20"><code class="php" data-trim>
 class BookManager {
 
   public function bookTreeAllData($bid, $link = NULL, $max_depth = NULL) {
@@ -719,9 +774,14 @@ class BookManager {
   }
 }
         </code></pre>
+        <aside class="notes">
+          <ul>
+            <li>Now just need to inject and change languageManager()</li>
+          </ul>
+        </aside>
       </section>
       <section>
-        <pre><code class="php" data-trim>
+        <pre class="font--20"><code class="php" data-trim>
 class BookManager {
 
   public function bookTreeAllData($bid, $link = NULL, $max_depth = NULL) {
@@ -737,6 +797,11 @@ class BookManager {
   }
 }
         </code></pre>
+        <aside class="notes">
+          <ul>
+            <li>And we're done.</li>
+          </ul>
+        </aside>
       </section>
       <section>
         <p>Service locators are a stepping stone<br />toward Dependency Injection</p>
@@ -758,7 +823,7 @@ class BookManager {
       </section>
       <section>
         <h3>Drupal 7</h3>
-        <pre><code class="php" data-trim>
+        <pre class="font--20"><code class="php" data-trim>
 function cache_get($cid, $bin = 'cache') {
   return _cache_get_object($bin)->get($cid);
 }
@@ -773,8 +838,8 @@ function cache_set($cid, $data, $bin = 'cache', $expire = CACHE_PERMANENT) {
         </code></pre>
       </section>
       <section>
-        <h3>Drupal 8 (early)</h3>
-        <pre><code class="php" data-trim>
+        <h3>Drupal 8 (evolving steps)</h3>
+        <pre class="font--18"><code class="php" data-trim>
 /**
  * @deprecated
  */
@@ -786,21 +851,22 @@ function cache($bin = 'cache') {
   return \Drupal::cache($bin);
 }
         </code></pre>
-        <pre class="fragment"><code class="php" data-trim>
+        <pre class="fragment font--18"><code class="php" data-trim>
 function something() {
   $item = cache_get('menu', 'a_key');
 }
         </code></pre>
-        <pre class="fragment"><code class="php" data-trim>
+        <pre class="fragment font--18"><code class="php" data-trim>
 function something() {
   $item = cache()->get('a_key');
 }
         </code></pre>
-        <pre class="fragment"><code class="php" data-trim>
+        <pre class="fragment font--18"><code class="php" data-trim>
 function something() {
   $item = \Drupal::cache('menu')->get('a_key');
 }
         </code></pre>
+        <p class="fragment" style="margin-top: 1em;">And in a class, just inject.</p>
       </section>
       <section>
         <p><q>Nothing is more permanent than a temporary solution</q></p>
@@ -824,6 +890,7 @@ function something() {
             <li>Rearranging deck chairs on the Titanic is OK if they get you closer to a life boat</li>
             <li>Early: "No new features, so why do it?" -- BAD</li>
             <li>Code improvement has to be seen as intrinsically valuable</li>
+            <li>Management problem if not...</li>
           </ul>
         </aside>
       </section>
@@ -834,25 +901,29 @@ function something() {
         <h3>Session handling</h3>
         <ul>
           <li class="fragment">2 years on 1 patch... fail :-(</li>
-          <li class="fragment">Rearrange deck chairs: 2 in already.</li>
-          <li class="fragment">We'll get there...</li>
+          <li class="fragment">Incremental steps: 10+ patches&hellip;</li>
+          <li class="fragment">&hellip; across 18 months</li>
         </ul>
+        <p class="fragment">Finally!</p>
       </section>
       <section>
         <p><q>Procedural code inside class keyword is still progress</q></p>
       </section>
       <section>
         <h3>Form Builder</h3>
-        <pre><code class="php" data-trim>
+        <pre class="font--20"><code class="php" data-trim>
 class FormBuilder {
-  public function __construct(ModuleHandlerInterface $module_handler, KeyValueExpirableFactoryInterface $key_value_expirable_factory, EventDispatcherInterface $event_dispatcher, UrlGeneratorInterface $url_generator, TranslationInterface $translation_manager, CsrfTokenGenerator $csrf_token = NULL, HttpKernel $http_kernel = NULL) {
+  public function __construct(FormValidatorInterface $form_validator, FormSubmitterInterface $form_submitter, FormCacheInterface $form_cache, ModuleHandlerInterface $module_handler, EventDispatcherInterface $event_dispatcher, RequestStack $request_stack, ClassResolverInterface $class_resolver, ElementInfoManagerInterface $element_info, ThemeManagerInterface $theme_manager, CsrfTokenGenerator $csrf_token = NULL) {
+    $this->formValidator = $form_validator;
+    $this->formSubmitter = $form_submitter;
+    $this->formCache = $form_cache;
     $this->moduleHandler = $module_handler;
-    $this->keyValueExpirableFactory = $key_value_expirable_factory;
     $this->eventDispatcher = $event_dispatcher;
-    $this->urlGenerator = $url_generator;
-    $this->translationManager = $translation_manager;
+    $this->requestStack = $request_stack;
+    $this->classResolver = $class_resolver;
+    $this->elementInfo = $element_info;
     $this->csrfToken = $csrf_token;
-    $this->httpKernel = $http_kernel;
+    $this->themeManager = $theme_manager;
   }
 
   // ...
@@ -867,10 +938,15 @@ class FormBuilder {
   }
 }
         </code></pre>
+        <aside class="notes">
+          <ul>
+            <li>10 dependencies(!)</li>
+          </ul>
+        </aside>
       </section>
       <section>
         <h3>form.inc</h3>
-        <pre><code class="php" data-trim>
+        <pre class="font--20"><code class="php" id="procedural-form-api" data-trim>
 function drupal_get_form($form_arg) {
   return call_user_func_array(
     [\Drupal::formBuilder(), 'getForm'],
@@ -890,6 +966,7 @@ function drupal_rebuild_form($form_id, &$form_state, $old = NULL) {
   return \Drupal::formBuilder()->rebuildForm($form_id, $form_state, $old);
 }
         </code></pre>
+        <p style="margin-top: 1em;" class="fragment">Later removed entirely!</p>
       </section>
       <section>
         <p>No program will ever be perfect<span class="fragment">, just make it better</span></p>
@@ -900,20 +977,28 @@ function drupal_rebuild_form($form_id, &$form_state, $old = NULL) {
       </section>
       <section>
         <h3>Form Builder</h3>
-        <pre><code class="php" data-trim>
+        <pre class="font--20"><code class="php" data-trim>
 class FormBuilder {
-  public function __construct(ModuleHandlerInterface $module_handler, KeyValueExpirableFactoryInterface $key_value_expirable_factory, EventDispatcherInterface $event_dispatcher, UrlGeneratorInterface $url_generator, TranslationInterface $translation_manager, CsrfTokenGenerator $csrf_token = NULL, HttpKernel $http_kernel = NULL) {
+  public function __construct(FormValidatorInterface $form_validator, FormSubmitterInterface $form_submitter, FormCacheInterface $form_cache, ModuleHandlerInterface $module_handler, EventDispatcherInterface $event_dispatcher, RequestStack $request_stack, ClassResolverInterface $class_resolver, ElementInfoManagerInterface $element_info, ThemeManagerInterface $theme_manager, CsrfTokenGenerator $csrf_token = NULL) {
+    $this->formValidator = $form_validator;
+    $this->formSubmitter = $form_submitter;
+    $this->formCache = $form_cache;
     $this->moduleHandler = $module_handler;
-    $this->keyValueExpirableFactory = $key_value_expirable_factory;
     $this->eventDispatcher = $event_dispatcher;
-    $this->urlGenerator = $url_generator;
-    $this->translationManager = $translation_manager;
+    $this->requestStack = $request_stack;
+    $this->classResolver = $class_resolver;
+    $this->elementInfo = $element_info;
     $this->csrfToken = $csrf_token;
-    $this->httpKernel = $http_kernel;
+    $this->themeManager = $theme_manager;
   }
 }
         </code></pre>
         <p class="fragment">The code around it is fine</p>
+        <aside class="notes">
+          <ul>
+            <li>Patches ready and waiting to simplify.</li>
+          </ul>
+        </aside>
       </section>
       <section>
         <p>Know when to push for better, and when it's good enough</p>
