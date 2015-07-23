@@ -141,27 +141,29 @@
         <p class="bigtext">Evolution is possible!</p>
       </section>
       <section>
-        <!-- @todo Flexbox this -->
-        <img src="assets/drupal-7-logo.jpg" style="height: 200px;" alt="Drupal 7" data-credit="https://association.drupal.org/files/drupal-7-logo.jpg" />
-        <ul>
-          <li class="fragment">PHP4-era Procedural</li>
-          <li class="fragment">Array-oriented</li>
-          <li class="fragment">Lots of functional tests</li>
-          <li class="fragment">"Unique" (but extensible) architecture</li>
-          <li class="fragment">Runs 2% of the web</li>
-          <li class="fragment">Massive community (954 contributors)</li>
-        </ul>
+        <div class="two-col">
+          <img src="assets/drupal-7-logo.jpg" style="height: 200px;" alt="Drupal 7" data-credit="https://association.drupal.org/files/drupal-7-logo.jpg" />
+          <ul>
+            <li class="fragment">PHP4-era Procedural</li>
+            <li class="fragment">Array-oriented</li>
+            <li class="fragment">Lots of functional tests</li>
+            <li class="fragment">"Unique" (but extensible) architecture</li>
+            <li class="fragment">Runs 2% of the web</li>
+            <li class="fragment">Massive community (954 contributors)</li>
+          </ul>
+        </div>
         <p style="clear: both; margin-top: 2em;" class="fragment">Very powerful, but straining at the seams</p>
       </section>
       <section>
-        <!-- @todo Flexbox this -->
-        <img src="assets/drupal-8-logo.png"  style="height: 200px;" alt="Drupal 8" data-credit="https://drupal.org/node/2119739" />
-        <ul>
-          <li class="fragment">Architecturally OOP</li>
-          <li class="fragment">8139 unit tests (and counting)</li>
-          <li class="fragment">Flexible architecture</li>
-          <li class="fragment">>3x contributors (2997 and counting)</li>
-        </ul>
+        <div class="two-col">
+          <img src="assets/drupal-8-logo.png" style="height: 200px;" alt="Drupal 8" data-credit="https://drupal.org/node/2119739" />
+          <ul>
+            <li class="fragment">Architecturally OOP</li>
+            <li class="fragment">8139 unit tests (and counting)</li>
+            <li class="fragment">Flexible architecture</li>
+            <li class="fragment">>3x contributors (2997 and counting)</li>
+          </ul>
+        </div>
         <p style="clear: both; margin-top: 2em;" class="fragment">How'd they do that?</p>
       </section>
       <section>
@@ -313,40 +315,44 @@
       </section>
       <section>
         <h2>Bottom up</h2>
-        <div class="fragment" style="float: left; width: 48%">
-          <h3>Pros</h3>
-          <ul>
-            <li class="fragment">Low-hanging fruit</li>
-            <li class="fragment">Easier parallelism</li>
-            <li class="fragment">Unravel knots bit by bit</li>
-          </ul>
-        </div>
-        <div class="fragment" style="float: right; width: 48%">
-          <h3>Cons</h3>
-          <ul>
-            <li class="fragment">Low-incentive</li>
-            <li class="fragment">Less impactful</li>
-            <li class="fragment">Staving off the big break</li>
-          </ul>
+        <div class="two-col">
+          <div class="fragment">
+            <h3>Pros</h3>
+            <ul>
+              <li class="fragment">Low-hanging fruit</li>
+              <li class="fragment">Easier parallelism</li>
+              <li class="fragment">Unravel knots bit by bit</li>
+            </ul>
+          </div>
+          <div class="fragment">
+            <h3>Cons</h3>
+            <ul>
+              <li class="fragment">Low-incentive</li>
+              <li class="fragment">Less impactful</li>
+              <li class="fragment">Staving off the big break</li>
+            </ul>
+          </div>
         </div>
       </section>
       <section>
         <h2>Top down</h2>
-        <div class="fragment" style="float: left; width: 48%">
-          <h3>Pros</h3>
-          <ul>
-            <li class="fragment">Highest-visibility first</li>
-            <li class="fragment">Identify the major knots</li>
-            <li class="fragment">Better contrast w/ old code</li>
-          </ul>
-        </div>
-        <div class="fragment" style="float: right; width: 48%">
-          <h3>Cons</h3>
-          <ul>
-            <li class="fragment">Higher risk</li>
-            <li class="fragment">So many knots...</li>
-            <li class="fragment">Don't forget the low-fruit!</li>
-          </ul>
+        <div class="two-col">
+          <div class="fragment" style="float: left; width: 48%">
+            <h3>Pros</h3>
+            <ul>
+              <li class="fragment">Highest-visibility first</li>
+              <li class="fragment">Identify the major knots</li>
+              <li class="fragment">Better contrast w/ old code</li>
+            </ul>
+          </div>
+          <div class="fragment" style="float: right; width: 48%">
+            <h3>Cons</h3>
+            <ul>
+              <li class="fragment">Higher risk</li>
+              <li class="fragment">So many knots&hellip;</li>
+              <li class="fragment">Don't forget the low-fruit!</li>
+            </ul>
+          </div>
         </div>
         <aside class="notes">
           <ul>
@@ -362,7 +368,7 @@
         <p class="bigtext">Clear messaging</p>
       </section>
       <section>
-        <p clas s="bigtext">Repeat your message</p>
+        <p class="bigtext">Repeat your message</p>
         <p class="fragment">Everyone wants to hear the message themselves</p>
         <p class="fragment">Need to repeat it in different ways</p>
         <p class="fragment">It's a total waste of time... <span class="fragment">Do it anyway</span></p>
@@ -375,7 +381,7 @@
         </aside>
       </section>
       <section>
-        <p>There are costs to poor messaging...</p>
+        <p class="bigtext">There are costs to poor messaging...</p>
         <ul>
           <li class="fragment">People learn at different rates</li>
           <li class="fragment">You're moving my cheese!</li>
@@ -468,7 +474,12 @@
       </section>
       <section>
         <h3>Bikeshed stoppers</h3>
-        <p class="fragment">Strong leadership, solid communication, luck</p>
+        <ul>
+          <li class="fragment">Strong leadership</li>
+          <li class="fragment">Clear decision making process</li>
+          <li class="fragment">Solid communication</li>
+        </ul>
+        <p class="fragment bigtext">Luck</p>
         <aside class="notes">
           <ul>
             <li>Strong leaders know when to say Shut Up in a way people appreciate</li>
