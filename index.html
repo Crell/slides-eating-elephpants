@@ -517,7 +517,7 @@
       </section>
       <section>
         <p>Drupal wrote its own testing framework</p>
-        <p class="fragment">(Please please do not do this)</p>
+        <p class="fragment">(Hey, it was 2008)</p>
         <p class="fragment">Having those tests saved our butts</p>
         <p style="margin-top: 1em;">
           <img class="fragment" src="assets/behat-logo.png" alt="Behat" style="background: lightgray;" />
@@ -538,19 +538,15 @@
         <p class="bigtext">Sharing is caring</p>
       </section>
       <section>
-        <p>Modern PHP is all about sharing</p>
-        <p class="fragment" style="margin-top: 1em;">It's way easier than it used to be</p>
+        <p style="text-align: left;"><q>I don't want to maintain [my] crappy code!</q></p>
+        <p style="text-align: right; margin-top: 1em;" class="fragment"><q>So use someone else's</q></p>
+        <p class="fragment" style="margin-top: 1em;">(Then they have to maintain it!)</p>
         <aside class="notes">
           <ul>
             <li>Composer, Symfony, Zend, Aura: Components FTW!</li>
             <li>Systems not built from components suck; replace them</li>
           </ul>
         </aside>
-      </section>
-      <section>
-        <p style="text-align: left;"><q>I don't want to maintain [my] crappy code!</q></p>
-        <p style="text-align: right; margin-top: 1em;" class="fragment"><q>So use someone else's</q></p>
-        <p class="fragment roll-in" style="margin-top: 1em;">(Then they have to maintain it!)</p>
       </section>
       <section>
         <img src="assets/osi-symbol.png" style="width: 50%;" alt="The logo of the Open Source Initiative" data-credit="http://opensource.org/" />
@@ -571,10 +567,24 @@
         </aside>
       </section>
       <section>
+        <h3>Share with yourself</h3>
+        <ul>
+          <li class="fragment">Build new code as components</li>
+          <li class="fragment">Write it right</li>
+          <li class="fragment">Share on Packagist!</li>
+        </ul>
+        <aside class="notes">
+          <ul>
+            <li>\Drupal\Component</li>
+            <li>Keeping it in sep package forces decoupling</li>
+            <li>Drupal Components hard to keep clean</li>
+          </ul>
+        </aside>
+      </section>
+      <section>
         <h3>For existing functionality</h3>
         <p class="fragment" style="margin-top: 1em;">Refactor your app, don't replace it</p>
         <p class="fragment">Replace your component, don't refactor it</p>
-        <p class="fragment roll-in">(Especially cryptography!)</p>
       </section>
       <section>
         <h3><code id="dhr">drupal_http_request()</code></h3>
@@ -584,22 +594,10 @@
           <li class="fragment">N-Path complexity: 25,303,344,960</li>
           <li class="fragment">Lacking a number of features (proxy support)</li>
         </ul>
-        <span class="fragment" data-classer="dhr" data-classer-class="struck">&nbsp;</span>
-      </section>
-      <section>
-        <h3>Use Guzzle instead</h3>
-        <p class="fragment">We did our <a href="https://groups.drupal.org/node/233173">research</a>!</p>
-        <div class="two-col">
+        <div class="fragment" data-classer="dhr" data-classer-class="struck" style="margin-top: 1em;">
           <img src="assets/guzzle-logo.png" style="background: #344041; width: 200px" alt="Guzzle logo" />
-          <ul>
-            <li class="fragment" style="padding-top: 2em;">HTTP/1.1</li>
-            <li class="fragment">Well-tested</li>
-            <li class="fragment">Loosely coupled</li>
-            <li class="fragment">Widely used</li>
-            <li class="fragment">Much better than ours</li>
-          </ul>
+          <p><code>s/drupal_http_request()/Guzzle/</code></p>
         </div>
-        <p class="fragment" style="margin-top: 1em;"><code>s/drupal_http_request()/Guzzle/</code></p>
         <aside class="notes">
           <ul>
             <li>Guzzle 3 refactored FOR US</li>
@@ -614,19 +612,6 @@
             <li>Outsourcing has costs; lack of control</li>
             <li>It often has value... but not always</li>
             <li>Still using own DBAL</li>
-          </ul>
-        </aside>
-      </section>
-      <section>
-        <h3>Share with yourself</h3>
-        <ul>
-          <li class="fragment">Build new code as components</li>
-          <li class="fragment">Write it right</li>
-          <li class="fragment">Share!</li>
-        </ul>
-        <aside class="notes">
-          <ul>
-            <li>\Drupal\Component</li>
           </ul>
         </aside>
       </section>
@@ -656,15 +641,6 @@
           </ul>
         </aside>
       </section>
-      <section>
-        <h3>Make code reviews easy</h3>
-        <ul>
-          <li class="fragment"><a href="https://dreditor.org/">Dreditor</a></li>
-          <li class="fragment">GitHub Pull Requests</li>
-          <li class="fragment">Please don't use patches...</li>
-        </ul>
-        <p class="fragment" style="margin-top: 1em;">Make contributing easy</p>
-      </section>
     </section>
     <section>
       <section>
@@ -691,9 +667,7 @@
       </section>
       <section>
         <p><q>But Service Locators are eeeeevil!</q></p>
-      </section>
-      <section>
-        <p>Service Locator = passed DI Container</p>
+        <p class="fragment">Service Locator = passed DI Container</p>
         <p class="fragment">That's it</p>
       </section>
       <section>
@@ -799,6 +773,10 @@ class BookManager {
         <pre class="font--20"><code class="php" data-trim>
 class BookManager {
 
+  public function __construct(LanguageManager $language_manager) {
+    $this->languageManager = $language_manager
+  }
+
   public function bookTreeAllData($bid, $link = NULL, $max_depth = NULL) {
     $language_interface = $this->languageManager()->getCurrentLanguage();
     // ...
@@ -836,53 +814,7 @@ class BookManager {
           <li class="fragment">Convert BC shims</li>
         </ul>
       </section>
-      <section>
-        <h3>Drupal 7</h3>
-        <pre class="font--20"><code class="php" data-trim>
-function cache_get($cid, $bin = 'cache') {
-  return _cache_get_object($bin)->get($cid);
-}
 
-function cache_get_multiple(array &$cids, $bin = 'cache') {
-  return _cache_get_object($bin)->getMultiple($cids);
-}
-
-function cache_set($cid, $data, $bin = 'cache', $expire = CACHE_PERMANENT) {
-  return _cache_get_object($bin)->set($cid, $data, $expire);
-}
-        </code></pre>
-      </section>
-      <section>
-        <h3>Drupal 8 (evolving steps)</h3>
-        <pre class="font--18"><code class="php" data-trim>
-/**
- * @deprecated
- */
-function cache_get($cid, $bin) {
-  return cache($bin)->get($cid);
-}
-
-function cache($bin = 'cache') {
-  return \Drupal::cache($bin);
-}
-        </code></pre>
-        <pre class="fragment font--18"><code class="php" data-trim>
-function something() {
-  $item = cache_get('menu', 'a_key');
-}
-        </code></pre>
-        <pre class="fragment font--18"><code class="php" data-trim>
-function something() {
-  $item = cache()->get('a_key');
-}
-        </code></pre>
-        <pre class="fragment font--18"><code class="php" data-trim>
-function something() {
-  $item = \Drupal::cache('menu')->get('a_key');
-}
-        </code></pre>
-        <p class="fragment" style="margin-top: 1em;">And in a class, just inject.</p>
-      </section>
       <section>
         <p><q>Nothing is more permanent than a temporary solution</q></p>
         <p class="fragment" style="margin-top: 1em;">This takes commitment to address</p>
@@ -962,6 +894,9 @@ class FormBuilder {
       <section>
         <h3>form.inc</h3>
         <pre class="font--20"><code class="php" id="procedural-form-api" data-trim>
+/**
+ * @deprecated
+ */
 function drupal_get_form($form_arg) {
   return call_user_func_array(
     [\Drupal::formBuilder(), 'getForm'],
@@ -969,16 +904,18 @@ function drupal_get_form($form_arg) {
   );
 }
 
+/**
+ * @deprecated
+ */
 function drupal_build_form($form_id, &$form_state) {
   return \Drupal::formBuilder()->buildForm($form_id, $form_state);
 }
 
+/**
+ * @deprecated
+ */
 function form_state_defaults() {
   return \Drupal::formBuilder()->getFormStateDefaults();
-}
-
-function drupal_rebuild_form($form_id, &$form_state, $old = NULL) {
-  return \Drupal::formBuilder()->rebuildForm($form_id, $form_state, $old);
 }
         </code></pre>
         <p style="margin-top: 1em;" class="fragment">Later removed entirely!</p>
