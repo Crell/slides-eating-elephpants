@@ -50,19 +50,9 @@
       text-shadow: 3px 3px 10px #990000;
     }
 
-    div.two-col {
-      display: -webkit-flex;
-      display: flex;
-      -webkit-justify-content: space-around;
-      justify-content: space-around;
-      -webkit-align-items: center;
-      align-items:         center;
-    }
-
   </style>
 
   <script src="palantirnet-theme/js/classer.js"></script>
-
 
 </head>
 <!-- Change body class to "dark" if you prefer a dark theme, or "light" if you'd rather have a light theme-->
@@ -90,20 +80,7 @@
           <li style="margin-top: 1em;">Advisor, Drupal Association</li>
           <li style="margin-top: 1em;"><code>implements Huggable</code></li>
         </ul>
-        <!--<img src="palantirnet-theme/imgs/palantirnet-logo.svg" alt="Palantir.net Pays me!" style="width: 300px; clear: both" />-->
       </div>
-
-    </section>
-    <section>
-      <h2><a href="http://twitter.com/Crell">@Crell</a></h2>
-      <img src="palantirnet-theme/imgs/palantirnet-logo.svg" alt="Palantir.net Pays me!" style="width: 300px; float: right;" />
-      <ul>
-        <li>Senior Architect, <a href="http://www.palantir.net/">Palantir.net</a></li>
-        <li>Drupal 8 Web Services Lead</li>
-        <li>Drupal Representative, <a href="http://www.php-fig.org/">PHP-FIG</a></li>
-        <li>Advisor, Drupal Association</li>
-        <li>Loveable pedant</li>
-      </ul>
     </section>
     <section>
       <section data-background="assets/duplo-kids.jpg" data-credit="https://www.flickr.com/photos/ianus/9373214">
@@ -123,6 +100,11 @@
       </section>
       <section>
         <p class="bigtext">Target Testable Code</p>
+        <aside class="notes">
+          <ul>
+            <li>"In what direction do we evolve?" Toward testability</li>
+          </ul>
+        </aside>
       </section>
       <section>
         <p class="bigtext">"Testable" is a proxy for ...</p>
@@ -328,9 +310,9 @@
       </section>
       <section>
         <h2>Bottom up</h2>
-        <div class="two-col">
+        <div class="l-2up">
           <div class="fragment">
-            <h3>Pros</h3>
+            <h3 style="text-align: center">Pros</h3>
             <ul>
               <li class="fragment">Low-hanging fruit</li>
               <li class="fragment">Easier parallelism</li>
@@ -338,7 +320,7 @@
             </ul>
           </div>
           <div class="fragment">
-            <h3>Cons</h3>
+            <h3 style="text-align: center">Cons</h3>
             <ul>
               <li class="fragment">Low-incentive</li>
               <li class="fragment">Less impactful</li>
@@ -349,9 +331,9 @@
       </section>
       <section>
         <h2>Top down</h2>
-        <div class="two-col">
+        <div class="l-2up">
           <div class="fragment" style="float: left; width: 48%">
-            <h3>Pros</h3>
+            <h3 style="text-align: center">Pros</h3>
             <ul>
               <li class="fragment">Highest-visibility first</li>
               <li class="fragment">Identify the major knots</li>
@@ -359,7 +341,7 @@
             </ul>
           </div>
           <div class="fragment" style="float: right; width: 48%">
-            <h3>Cons</h3>
+            <h3 style="text-align: center">Cons</h3>
             <ul>
               <li class="fragment">Higher risk</li>
               <li class="fragment">So many knots&hellip;</li>
