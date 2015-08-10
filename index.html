@@ -43,6 +43,13 @@
       text-shadow: 3px 3px 10px #990000;
     }
 
+    p.bigdeal {
+      font-size: 200%;
+      color: Red;
+      font-style: italic;
+      text-shadow: 3px 3px 10px #990000;
+    }
+
     div.two-col {
       display: -webkit-flex;
       display: flex;
@@ -50,10 +57,6 @@
       justify-content: space-around;
       -webkit-align-items: center;
       align-items:         center;
-    }
-
-    .two-col * {
-
     }
 
   </style>
@@ -74,14 +77,22 @@
         <small>Presented by <a href="http://www.garfieldtech.com/">Larry Garfield</a> (<a href="http://twitter.com/Crell">@Crell</a>)</small>
       </p>
     </section>
-    <section class="1-2up">
+    <section class="l-2up">
       <h2><a href="http://twitter.com/Crell">@Crell</a></h2>
       <div>
-        <img src="assets/larry-olaf-hug.jpg" alt="Larry is Huggable" style="width: 400px;" />
+        <img src="assets/larry-olaf-hug.jpg" alt="Larry implements Huggable" style="width: 350px; margin: 0" />
       </div>
-      <div>
-        <img src="palantirnet-theme/imgs/palantirnet-logo.svg" alt="Palantir.net Pays me!" style="width: 300px;" />
+      <div style="">
+        <ul style="text-wrap: none">
+          <li>Senior Architect, <a href="http://www.palantir.net/">Palantir.net</a></li>
+          <li style="margin-top: 1em;">Drupal 8 Web Services Lead</li>
+          <li style="margin-top: 1em;">Drupal Representative, <a href="http://www.php-fig.org/">PHP-FIG</a></li>
+          <li style="margin-top: 1em;">Advisor, Drupal Association</li>
+          <li style="margin-top: 1em;"><code>implements Huggable</code></li>
+        </ul>
+        <!--<img src="palantirnet-theme/imgs/palantirnet-logo.svg" alt="Palantir.net Pays me!" style="width: 300px; clear: both" />-->
       </div>
+
     </section>
     <section>
       <h2><a href="http://twitter.com/Crell">@Crell</a></h2>
@@ -106,29 +117,21 @@
         </aside>
       </section>
     </section>
-
     <section>
       <section>
-        <h2>What we want</h2>
-        <p class="bigtext fragment" id="no-legacy-code">No legacy code</p>
-        <p class="bigtext fragment" data-classer="no-legacy-code" data-classer-class="struck">Less legacy code</p>
+        <p class="bigtext">Evolution is possible!</p>
       </section>
       <section>
-        <h2>Legacy code</h2>
-        <ul>
-          <li class="fragment" id="code-didnt-write"><em>noun</em>: Code I didn't write</li>
-          <li class="fragment" id="code-without-tests" data-classer="code-didnt-write" data-classer-class="struck"><em>noun</em>: Code without unit tests</li>
-          <li class="fragment" data-classer="code-without-tests" data-classer-class="struck"><em>noun</em>: Code worth testing that cannot be unit tested</li>
-        </ul>
+        <p class="bigtext">Target Testable Code</p>
       </section>
       <section>
-        <p class="bigtext">What we really want is testable code</p>
+        <p class="bigtext">"Testable" is a proxy for ...</p>
         <ul class="fragment">
-          <li>Loosely coupled</li>
+          <li>Loosely&nbsp;coupled</li>
           <li>Decoupled</li>
           <li>Injectable</li>
           <li>Reusable</li>
-          <li>Easily understandable</li>
+          <li>Understandable</li>
           <li>Clean</li>
           <li>"Good"</li>
         </ul>
@@ -139,15 +142,10 @@
           </ul>
         </aside>
       </section>
-    </section>
-    <section>
       <section>
-        <p class="bigtext">Evolution is possible!</p>
-      </section>
-      <section>
-        <div class="two-col">
+        <div class="l-2up">
           <img src="assets/drupal-7-logo.jpg" style="height: 200px;" alt="Drupal 7" data-credit="https://association.drupal.org/files/drupal-7-logo.jpg" />
-          <ul>
+          <ul style="text-wrap: none">
             <li class="fragment">PHP4-era Procedural</li>
             <li class="fragment">Array-oriented</li>
             <li class="fragment">Lots of functional tests</li>
@@ -159,12 +157,14 @@
         <p style="clear: both; margin-top: 2em;" class="fragment">Very powerful, but straining at the seams</p>
       </section>
       <section>
-        <div class="two-col">
+        <div class="l-2up">
           <img src="assets/drupal-8-logo.png" style="height: 200px;" alt="Drupal 8" data-credit="https://drupal.org/node/2119739" />
           <ul>
             <li class="fragment">Architecturally OOP</li>
             <li class="fragment">8139 unit tests (and counting)</li>
             <li class="fragment">Flexible architecture</li>
+            <li class="fragment">Modern standards</li>
+            <li class="fragment">Ebraces PIE</li>
             <li class="fragment">>3x contributors (3000+ and counting)</li>
           </ul>
         </div>
@@ -229,7 +229,6 @@
         <p class="bigtext">Learn from our <span id="our-experience">experience</span> <span class="fragment" data-classer="our-experience" data-classer-class="struck">mistakes</span></p>
       </section>
       <section>
-        <h2>Lesson 1</h2>
         <p class="bigtext">Refactoring is more a social/governance<br />challenge than a technical challenge</p>
         <aside class="notes">
           <ul>
@@ -271,7 +270,7 @@
       </section>
       <section>
         <p><q>Code quality doesn't matter, only user experience matters</q></p>
-        <p class="fragment" style="margin-top: 2em;">Fire anyone who says this</p>
+        <p id="dx-wrong" class="fragment "  data-classer="dx-wrong" data-classer-class="bigdeal" style="margin-top: 1em;">Wrong</p>
         <p class="fragment" style="margin-top: 2em;">Developers are users... <span class="fragment">of code</span></p>
         <aside class="notes">
           <ul>
@@ -801,21 +800,13 @@ class BookManager {
         <p>Service locators are a stepping stone<br />toward Dependency Injection</p>
       </section>
       <section>
-        <p class="bigtext">Break things in steps</p>
-      </section>
-      <section>
-        <p>Big refactoring breaks APIs</p>
-        <p class="fragment">Deal</p>
-      </section>
-      <section>
-        <h3>How to deal</h3>
+        <h3>Break things in steps</h3>
         <ul>
           <li class="fragment">BC shims are your friend</li>
           <li class="fragment">Deprecate immediately</li>
           <li class="fragment">Convert BC shims</li>
         </ul>
       </section>
-
       <section>
         <p><q>Nothing is more permanent than a temporary solution</q></p>
         <p class="fragment" style="margin-top: 1em;">This takes commitment to address</p>
@@ -833,10 +824,11 @@ class BookManager {
       <section>
         <p>Changesets that just remove legacy use<br /><em>must</em> be acceptable</p>
         <p class="fragment" style="margin-top: 1em;">Improving code without adding features <em>must</em> be acceptable</p>
+        <p class="fragment" style="margin-top: 1em;">Time for just paying down debt <em>must</em></p>
         <aside class="notes">
           <ul>
             <li>Rearranging deck chairs on the Titanic is OK if they get you closer to a life boat</li>
-            <li>Early: "No new features, so why do it?" -- BAD</li>
+            <li>Early: "No new features, so why do it?" -- Slowed us down a lot</li>
             <li>Code improvement has to be seen as intrinsically valuable</li>
             <li>Management problem if not...</li>
           </ul>
@@ -955,6 +947,10 @@ class FormBuilder {
       </section>
       <section>
         <p>Know when to push for better, and when it's good enough</p>
+      </section>
+      <section>
+        <blockquote>&quot;perfect is the enemy of good&quot;.&#10;&#10;yeah, but good enough is the enemy of good, too.</blockquote>
+        <p>&mdash; <a href="https://twitter.com/getify/status/625321163409874944">@Getify</a></p>
       </section>
       <section>
         <p class="bigtext">Interfaces FTW</p>
